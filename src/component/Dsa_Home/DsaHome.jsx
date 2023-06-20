@@ -1,8 +1,7 @@
-
-import './DsaHome.css'
+import './DsaHome.css';
 function DsaHome() {
   return (
-    <div className = "container">
+    <div className = "dsa-container">
 
     <img className = "icon" src = "./src/assets/sad.png"/>   
     <h3 >No sheet Started Yet</h3>

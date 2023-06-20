@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh;
   justify-content: space-evenly;
-  width: 100vw;
+  width: 100%;
   top:80px;
 }
 
@@ -26,7 +26,7 @@
   width: 30vw;
   margin-bottom: 10px;
   border-radius: 5px;
-  animation: shake 2s infinite;
+  animation: shake 3s;
 }
 
 .WebDevContainer{
@@ -49,7 +49,7 @@
   height: 50vh;
   margin-bottom: 10px;
   border-radius: 5px;
-  animation: shake 2s infinite;
+  animation: shake 3s;
 }
 
 button{

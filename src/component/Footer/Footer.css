@@ -1,0 +1,49 @@
+
+
+.footer {
+
+    padding: 50px 0 25px 0;
+    width: 100%;
+    color: rgb(221, 221, 221);
+    text-align: center;
+
+}
+
+.align-logo {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.row {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 12rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-col {
+
+  padding: 8px;
+}
+
+#light .footer {
+
+    background: linear-gradient(335deg, #6e3cb5 0, #5c36b3 25%, #4530b2 50%, #232bb1 75%, #0028af 100%);
+
+}
+
+#dark .footer {
+
+    background-color: #000000;
+    background: linear-gradient(147deg, #000000 0%, #434343 74%);
+    color: white;
+}

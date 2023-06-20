@@ -1,0 +1,21 @@
+
+
+#light .navbar {
+
+    background: linear-gradient(335deg, #6e3cb5 0, #5c36b3 25%, #4530b2 50%, #232bb1 75%, #0028af 100%);
+}
+
+#dark .navbar {
+
+    background-color: #000000;
+    background: linear-gradient(147deg, #000000 0%, #434343 74%);
+    color: white;
+}
+
+
+.App  #dark {
+
+
+    background-color: #000000;
+    background: linear-gradient(147deg, #000000 0%, #434343 74%);
+}
