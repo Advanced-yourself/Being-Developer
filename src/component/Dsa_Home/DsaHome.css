@@ -1,0 +1,49 @@
+.container {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%; /* Position the child 50% from the top of the parent */
+  left: 50%; /* Position the child 50% from the left of the parent */
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex-direction: column;
+}
+
+h3 {
+  display: block;
+}
+
+button {
+  background-color: #2193b0;
+  color: white;
+  padding: 15px;
+  border-radius: 80px;
+}
+
+img:hover {
+    animation: shake 2s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
