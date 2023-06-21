@@ -17,6 +17,7 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 const pages = ["Home", "DSA", "Web Dev"];
@@ -64,6 +65,7 @@ const Navbar = ({toggleTheme, theme}) => {
             >
               Being Developer
             </Typography>
+            
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -96,7 +98,7 @@ const Navbar = ({toggleTheme, theme}) => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Link to="/dsa"><Typography textAlign="center">{page}</Typography></Link>
                   </MenuItem>
                 ))}
               </Menu>

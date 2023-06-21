@@ -6,6 +6,7 @@
     width: 100%;
     color: rgb(221, 221, 221);
     text-align: center;
+    min-height:max-content;
 
 }
 
@@ -31,8 +32,7 @@ ul {
 }
 
 .footer-col {
-
-  padding: 8px;
+   padding: 8px;
 }
 
 #light .footer {
@@ -46,4 +46,12 @@ ul {
     background-color: #000000;
     background: linear-gradient(147deg, #000000 0%, #434343 74%);
     color: white;
+}
+
+
+.footer-col-align {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

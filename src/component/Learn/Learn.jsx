@@ -2,7 +2,7 @@ import "./Learn.css";
 const Home = () => {
   return (
     <>
-      <main className="container">
+      <main className="learn-container">
         <div className="DsaContainer">
           <img src = ".\src\assets\asset2.png"className="DsaSection"/>
           <button>Learn DSA</button>
