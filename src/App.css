@@ -16,6 +16,14 @@
 .App  #dark {
 
 
-    background-color: #000000;
-    background: linear-gradient(147deg, #000000 0%, #434343 74%);
+    background-color: #485461;
+    background: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+}
+
+
+.App {
+
+    background-color: #ffffff;
+    background: linear-gradient(315deg, #cfcccc 0%, #3c8ce9 74%);
 }

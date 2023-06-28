@@ -8,7 +8,6 @@ const Footer = () => {
       <div className="footer">
         <div className="container">
             <div className="row">
-            <div className='footer-col-align'>
                 <div className="footer-col">
                 <div className='align-logo'>
                 <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: '30px' }} />
@@ -25,8 +24,6 @@ const Footer = () => {
                         <li>Contact</li>
                     </ul>
                 </div>
-                </div>
-                <div className='footer-col-align'>
                 <div className="footer-col">
                 <h3>SERVICES</h3>
                     <ul>
@@ -38,11 +35,10 @@ const Footer = () => {
                 <div className="footer-col">
                 <div>
                    <h3>GET IN TOUCH</h3>
-                   <h4>Email: support@vivekhelp.com</h4>
+                   <h4>Email: support@BeingDeveloper.com</h4>
+                </div>
                 </div>
                 
-                </div>
-                </div>
             </div>
         </div>
       </div>

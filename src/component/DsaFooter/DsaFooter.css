@@ -1,14 +1,11 @@
-
-
 .footer {
 
     padding: 50px 0 25px 0;
     width: 100%;
-    color: rgb(255, 255, 255);
+    color: rgb(221, 221, 221);
     text-align: center;
-    min-height:80vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    min-height:max-content;
+
 }
 
 .align-logo {
@@ -48,6 +45,4 @@ ul {
     background: linear-gradient(147deg, #000000 0%, #434343 74%);
     color: white;
 }
-
-
 

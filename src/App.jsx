@@ -4,6 +4,8 @@ import "./component/Footer/Footer.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import DsaSheet from "./pages/DsaSheet";
+import PracticeWebDev from "./pages/PracticeWebDev";
+
 
 export const ThemeContext = createContext(null);
 
@@ -22,7 +24,8 @@ const App = () => {
       <div id={theme}>
       <Routes>
       <Route path="/" element={<Home toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa" element={<DsaSheet/>}/>
+      <Route path="/dsa" element={<DsaSheet toggleTheme={toggleTheme} theme={theme}/>}/>
+      <Route path="/web-practice" element={<PracticeWebDev/>}/>
       </Routes>
       </div>
       </div>

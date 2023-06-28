@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import React,{useState} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,60 +14,44 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CodeIcon from "@mui/icons-material/Code";
-import "./Navbar.css";
+import "../Navbar/Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-
-const pages = ["Home", "DSA", "Web Dev"];
+const pages = ["HOME", "YOUR SHEETS", "ALL SHEETS"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+const DsaNavbar = ({toggleTheme, theme}) => {
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
 
-
-const Navbar = ({toggleTheme, theme}) => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  function getPageLink(page) {
-    if (page === "Web Dev") {
-      return "/web-practice";
-    } else if (page === "DSA") {
-      return "/dsa";
-    } else if (page === "Home") {
-      return "/";
-    } else {
-      return "/"; // Fallback link if page value doesn't match any specific case
-    }
-  }
-
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+      };
+      const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+      };
+    
+      const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+      };
+    
+      const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+      };
   return (
     <>
       <AppBar position="static" className="navbar">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
-          <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white", textDecoration: "none"}}>
             <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
               component="a"
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -80,7 +65,6 @@ const Navbar = ({toggleTheme, theme}) => {
             
               Being Developer
             </Typography>
-            </Link>
             
             
 
@@ -115,14 +99,7 @@ const Navbar = ({toggleTheme, theme}) => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  
-                    {page === "DSA" ? (
-
-                      <Link to="/dsa"><Typography textAlign="center">{page}</Typography></Link>
-                    )  : (
-                      <Typography textAlign="center">{page}</Typography>
-                    )
-                    }
+                    <Link to="/dsa"><Typography textAlign="center">{page}</Typography></Link>
                   </MenuItem>
                 ))}
               </Menu>
@@ -144,7 +121,7 @@ const Navbar = ({toggleTheme, theme}) => {
                 textDecoration: "none",
               }}
             >
-              Being Developer
+              LOGO
             </Typography>
             <Box
               sx={{
@@ -158,11 +135,8 @@ const Navbar = ({toggleTheme, theme}) => {
               }}
             >
               {pages.map((page) => (
-     <Link
-    to={getPageLink(page)}
-    key={page}
-    onClick={handleCloseNavMenu}
-  >
+                page === "DSA" ? (
+    <Link to="/dsa" key={page} onClick={handleCloseNavMenu}>
       <Button
         sx={{
           my: 2,
@@ -179,7 +153,26 @@ const Navbar = ({toggleTheme, theme}) => {
         {page}
       </Button>
     </Link>
-  
+  ) : (
+    // Render regular Button component for other pages
+    <Button
+      key={page}
+      onClick={handleCloseNavMenu}
+      sx={{
+        my: 2,
+        color: "white",
+        display: "block",
+        marginLeft: "40px",
+        marginRight: "20px",
+        paddingLeft: "10px",
+        paddingRight: "10px",
+        fontWeight: "600",
+        fontFamily: "sans-serif",
+      }}
+    >
+      {page}
+    </Button>
+  )
               ))}
             </Box>
 
@@ -226,7 +219,7 @@ const Navbar = ({toggleTheme, theme}) => {
         </Container>
       </AppBar>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default DsaNavbar;
