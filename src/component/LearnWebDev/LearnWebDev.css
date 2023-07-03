@@ -1,0 +1,10 @@
+
+.learn-web-container {
+
+
+        width: 100%;
+        min-height: 75vh;
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+}

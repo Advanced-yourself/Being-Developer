@@ -127,6 +127,7 @@ const Navbar = ({toggleTheme, theme}) => {
                 ))}
               </Menu>
             </Box>
+            <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white", textDecoration: "none"}}>
             <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
@@ -146,6 +147,7 @@ const Navbar = ({toggleTheme, theme}) => {
             >
               Being Developer
             </Typography>
+            </Link>
             <Box
               sx={{
                 flexGrow: 2,

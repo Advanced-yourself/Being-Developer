@@ -4,7 +4,11 @@ import "./component/Footer/Footer.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import DsaSheet from "./pages/DsaSheet";
-import PracticeWebDev from "./pages/PracticeWebDev";
+import LearnWebDev from "./pages/LearnWebDev";
+import Login from "./pages/Login";
+import AllDsaSheets from "./pages/AllDsaSheets";
+import Bookmarks from "./pages/Bookmarks";
+import AllQuestionList from "./pages/AllQuestionList";
 
 
 export const ThemeContext = createContext(null);
@@ -25,7 +29,11 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Home toggleTheme={toggleTheme} theme={theme}/>}/>
       <Route path="/dsa" element={<DsaSheet toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/web-practice" element={<PracticeWebDev/>}/>
+      <Route path="/web-practice" element={<LearnWebDev toggleTheme={toggleTheme} theme={theme}/>}/>
+      <Route path="/dsa/allSheets" element={<AllDsaSheets  toggleTheme={toggleTheme} theme={theme}/>}/>
+      <Route path="/dsa/bookmark"  element={<Bookmarks toggleTheme={toggleTheme} theme={theme}/>}/>
+      <Route path="/dsa/AllSheets/AllQuestions"  element={<AllQuestionList/>}/>
+      <Route path="login" element={<Login/>}/>
       </Routes>
       </div>
       </div>

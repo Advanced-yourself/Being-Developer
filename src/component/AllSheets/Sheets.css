@@ -1,0 +1,16 @@
+
+.sheet-container {
+
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+
+.color {
+
+    background-color: rgb(118, 183, 187);
+}

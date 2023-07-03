@@ -1,6 +1,6 @@
 import "./Learn.css";
-import webImg from "../../../public/assets/asset1.png";
-import dsaImg from "../../../public/assets/asset2.png";
+import webImg from "../../../src/assets/asset1.png";
+import dsaImg from "../../../src/assets/asset2.png";
 
 const Home = () => {
   return (

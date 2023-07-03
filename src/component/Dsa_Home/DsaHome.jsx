@@ -1,6 +1,7 @@
 import "./DsaHome.css";
-import sadBlack from "../../../public/assets/sad-face-dark.png";
-import sadLight from "../../../public/assets/sad-face-light.png";
+import sadBlack from "../../../src/assets/sad-face-dark.png";
+import sadLight from "../../../src/assets/sad-face-light.png";
+import { Link } from "react-router-dom";
 
 function DsaHome({toggleTheme, theme}) {
 
@@ -14,7 +15,9 @@ function DsaHome({toggleTheme, theme}) {
         style={{ width: "240px" }}
       />
       <h3 style={{color: `${colors}`}}>No sheet Started Yet</h3>
+      <Link to="/dsa/AllSheets">
       <button>Start Now</button>
+      </Link>
     </div>
   );
 }
