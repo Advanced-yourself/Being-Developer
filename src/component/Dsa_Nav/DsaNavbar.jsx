@@ -21,7 +21,7 @@ import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const pages = ["HOME", "ALL SHEETS", "BOOKMARK"];
+const pages = ["HOME","YOUR SHEET","ALL SHEETS", "BOOKMARK"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const DsaNavbar = ({toggleTheme, theme}) => {
@@ -47,11 +47,18 @@ const DsaNavbar = ({toggleTheme, theme}) => {
       function getPageLink(page) {
         if (page === "HOME") {
           return "/dsa";
-        } else if (page === "ALL SHEETS") {
+        }
+        else if(page === "YOUR SHEET")
+        {
+            return "/dsa/YourSheet"
+        } 
+        else if (page === "ALL SHEETS") {
           return "/dsa/AllSheets";
-        } else if (page === "BOOKMARK") {
+        }
+         else if (page === "BOOKMARK") {
           return "/dsa/bookmark";
-        } else {
+        } 
+        else {
           return "/dsa"; // Fallback link if page value doesn't match any specific case
         }
       }
