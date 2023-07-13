@@ -81,6 +81,12 @@ button{
     background-color: #2193b0;
     color: aliceblue;
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* @media query */

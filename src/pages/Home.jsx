@@ -1,13 +1,13 @@
 import Navbar from "../component/Navbar/Navbar";
 import Learn from "../component/Learn/Learn";
-import DsaFooter from "../component/DsaFooter/DsaFooter";
+import Footer from "../component/Footer/Footer";
 
 const Home = ({toggleTheme, theme}) => {
   return (
     <div className='Home'>
         <Navbar toggleTheme={toggleTheme} theme={theme} />
         <Learn/>
-        <DsaFooter/>
+        <Footer/>
     </div>
   )
 }

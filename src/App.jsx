@@ -1,6 +1,6 @@
 import { useState, createContext } from "react";
 import "./App.css";
-import "./component/Footer/Footer.css";
+// import "./component/Footer/Footer.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import DsaSheet from "./pages/DsaSheet";
@@ -10,6 +10,8 @@ import AllDsaSheets from "./pages/AllDsaSheets";
 import Bookmarks from "./pages/Bookmarks";
 import AllQuestionList from "./pages/AllQuestionList";
 import YourSheetPage from "./pages/YourSheetPage";
+import SignUpPage from "./component/SignUpPage/SignUpPage";
+import LoginPage from "./component/LoginPage/LoginPage";
 
 
 export const ThemeContext = createContext(null);
@@ -35,7 +37,8 @@ const App = () => {
       <Route path="/dsa/YourSheet" element={<YourSheetPage toggleTheme={toggleTheme} theme={theme}/>}/>
       <Route path="/dsa/bookmark"  element={<Bookmarks toggleTheme={toggleTheme} theme={theme}/>}/>
       <Route path="/dsa/AllSheets/AllQuestions"  element={<AllQuestionList/>}/>
-      <Route path="login" element={<Login/>}/>
+      <Route path="sign" element={<SignUpPage/>}/>
+      <Route path="login" element={<LoginPage/>}/>
       </Routes>
       </div>
       </div>

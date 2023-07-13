@@ -50,3 +50,7 @@
   .checkbox:checked + .checkbox-label .ball {
     transform: translateX(48px);
   }
+ 
+.class{
+  background-color: #f1660f;
+}

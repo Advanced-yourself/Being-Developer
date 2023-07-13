@@ -114,7 +114,7 @@ const Navbar = ({toggleTheme, theme}) => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={handleCloseNavMenu} >
                   
                     {page === "DSA" ? (
 
@@ -165,7 +165,7 @@ const Navbar = ({toggleTheme, theme}) => {
     key={page}
     onClick={handleCloseNavMenu}
   >
-      <Button
+      <Button 
         sx={{
           my: 2,
           color: "white",
@@ -176,6 +176,11 @@ const Navbar = ({toggleTheme, theme}) => {
           paddingRight: "10px",
           fontWeight: "600",
           fontFamily: "sans-serif",
+          transition: "box-shadow 0.3s ease, transform 0.3s ease",
+          ":hover": {
+            transform: "scale(1.05)",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+          },
         }}
       >
         {page}

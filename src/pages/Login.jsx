@@ -1,10 +1,10 @@
-import LoginComp from "../component/Login/LoginComp";
+import LoginPage from "../component/LoginPage/LoginPage";
 
 const Login = () => {
   return (
-    <div>
-      <LoginComp/>
-    </div>
+    <>
+      <LoginPage/>
+    </>
   )
 }
 

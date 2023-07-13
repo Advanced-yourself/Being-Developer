@@ -1,7 +1,7 @@
 
 import ArrayQuestion from '../component/ArrayQuestions/ArrayQuestion';
 import DsaNavbar from "../component/Dsa_Nav/DsaNavbar";
-import DsaFooter from "../component/DsaFooter/DsaFooter";
+import Footer from "../component/Footer/Footer";
 
 
 const AllQuestionList = () => {
@@ -9,7 +9,7 @@ const AllQuestionList = () => {
     <div>
        <DsaNavbar/>
       <ArrayQuestion/>
-      <DsaFooter/>
+      <Footer/>
     </div>
   )
 }

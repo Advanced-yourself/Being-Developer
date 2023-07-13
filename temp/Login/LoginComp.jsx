@@ -1,5 +1,5 @@
 
-import "../Login/LoginComp.css";
+import "./LoginComp.css";
 
 const LoginComp = () => {
 

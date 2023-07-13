@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeIcon from '@mui/icons-material/Code';
-import "../DsaFooter/DsaFooter.css";
+import "../Footer/Footer.css";
 
 const DsaFooter = () => {
   return (
