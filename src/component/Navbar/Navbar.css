@@ -1,11 +1,11 @@
 
-
-/* .navbar {
-
-    background: linear-gradient(335deg, #6e3cb5 0, #5c36b3 25%, #4530b2 50%, #232bb1 75%, #0028af 100%);
-} */
-
-
+.navbar{
+  /* position: fixed; */
+  top: 0;
+  background-color: #f2f2f2;
+  /* padding: 16px; */
+  z-index: 9999;
+}
 .checkbox {
     opacity: 0;
     position: absolute;

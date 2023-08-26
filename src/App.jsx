@@ -36,7 +36,7 @@ const App = () => {
       <Route path="/dsa/allSheets" element={<AllDsaSheets  toggleTheme={toggleTheme} theme={theme}/>}/>
       <Route path="/dsa/YourSheet" element={<YourSheetPage toggleTheme={toggleTheme} theme={theme}/>}/>
       <Route path="/dsa/bookmark"  element={<Bookmarks toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa/AllSheets/AllQuestions"  element={<AllQuestionList/>}/>
+      <Route path="/dsa/AllSheets/AllQuestions"  element={<AllQuestionList toggleTheme={toggleTheme} theme={theme} />}/>
       <Route path="sign" element={<SignUpPage/>}/>
       <Route path="login" element={<LoginPage/>}/>
       </Routes>
