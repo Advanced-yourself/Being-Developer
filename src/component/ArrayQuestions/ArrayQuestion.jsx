@@ -1,5 +1,5 @@
 
-import questions from "../../questions";
+// import questions from "../../questions";
 
 const ArrayQuestion = () => {
 
