@@ -58,7 +58,7 @@ const Navbar = ({toggleTheme, theme}) => {
 
   return (
     <>
-      <AppBar position="static" className="navbar">
+      <AppBar position="sticky" className="navbar">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
           <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white", textDecoration: "none"}}>

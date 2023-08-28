@@ -38,7 +38,7 @@ const DsaFooter = () => {
                  <h4>Email: support@beingDeveloper.com</h4>
               </div>
               </div>
-              
+              <Progressbar  className="App" bgcolor="#99ccff" progress='95'  height={20} />
           </div>
       </div>
     </div>
