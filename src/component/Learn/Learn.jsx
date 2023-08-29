@@ -9,14 +9,14 @@ const Home = () => {
     <h1>LEARN</h1>
       <main className="learn-container">
         <div className="DsaContainer">
-          <img src ={dsaImg} className="DsaSection"/>
+          <img src ={dsaImg} alt = "Dsa Container Image" className="DsaSection"/>
           <Link to="/dsa">
           <button className="learn-btn">Data Structures & Algorithms</button>
           </Link>
         </div>
 
         <div className="WebDevContainer">
-          <img src ={webImg} className="WebDevSection"></img>
+          <img src ={webImg} alt = "WebDev Container Image" className="WebDevSection"></img>
           <button className="learn-btn">Web Development</button>
         </div>
       </main>

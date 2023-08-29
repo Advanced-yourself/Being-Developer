@@ -6,7 +6,7 @@ import CircularProgress from "@mui/joy/CircularProgress";
 const ProgressBar = ({ bgcolor, progress, height }) => {
 
   const totalValue = 10;
-  const [currentValue, setCurrentValue] = useState(3);
+  const [currentValue, setCurrentValue] = useState(9);
   const progressPercentage = (currentValue / totalValue) * 100;
 
   const Parentdiv = {

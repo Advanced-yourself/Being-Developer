@@ -42,9 +42,12 @@
 
 import { Grid } from '@mui/material';
 import CustomCard from './CustomCard';
-import dsaImg1 from '../../../src/assets/asset1.png';
-import dsaImg2 from '../../../src/assets/asset1.png';
-import dsaImg3 from '../../../src/assets/asset1.png';
+import striver from '../../../src/assets/striver.png';
+import loveBabbar from '../../../src/assets/loveBabbar.png';
+import anuj from '../../../src/assets/anuj.jpg';
+import nishant from '../../../src/assets/nishant.png';
+import leetcode from '../../../src/assets/leetcode.jpg';
+import neetcode from '../../../src/assets/neetCode.png';
 import './Sheets.css';
 
 const Sheets = () => {
@@ -53,56 +56,72 @@ const Sheets = () => {
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg1}
+            image={striver}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 1"
             description="This is the first card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg2}
+            image={loveBabbar}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 2"
             description="This is the second card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={nishant}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={neetcode}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={striver}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={striver}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={anuj}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CustomCard
-            image={dsaImg3}
+            image={leetcode}
+            alt = "title"
+            className = "dsaSheetImg"
             title="Card 3"
             description="This is the third card."
           />

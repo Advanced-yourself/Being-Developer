@@ -7,13 +7,18 @@ import Table from "@mui/joy/Table";
 import Typography from "@mui/joy/Typography";
 import Sheet from "@mui/joy/Sheet";
 import Checkbox from "@mui/joy/Checkbox";
+import {
+  CheckBoxOutlineBlankOutlined,
+  CheckBoxOutlined,
+} from "@mui/icons-material";
+
 // import FormControl from '@mui/joy/FormControl';
 // import FormLabel from '@mui/joy/FormLabel';
 import IconButton from "@mui/joy/IconButton";
 import Link from "@mui/joy/Link";
 import Tooltip from "@mui/joy/Tooltip";
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
+import Select from "@mui/joy/Select";
+import Option from "@mui/joy/Option";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 // import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -21,8 +26,8 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { visuallyHidden } from "@mui/utils";
 // import { useEffect,useState } from 'react';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import { useState } from "react";
 
 function createData(name, calories, fat) {
@@ -58,7 +63,6 @@ const rows = [
   createData("Marshmallow", 318, 0, 81, 2.0),
   createData("Nougat", 360, 19.0, 9, 37.0),
   createData("Oreo", 437, 18.0, 63, 4.0),
-  
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -124,7 +128,7 @@ function EnhancedTableHead(props) {
     rowCount,
     onRequestSort,
     toggleTheme,
-    theme
+    theme,
   } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -133,22 +137,18 @@ function EnhancedTableHead(props) {
   return (
     <thead toggleTheme={toggleTheme} theme={theme}>
       <tr>
-        <th>
-          {/* //For spacing */}
-        </th>
+        <th>{/* //For spacing */}</th>
         {headCells.map((headCell) => {
           const active = orderBy === headCell.id;
           return (
-            <th
-              key={headCell.id}
-            >
+            <th key={headCell.id}>
               <Link
-                 underline="none"
-                 // color="red"
-                 textColor={active ? muiTheme.palette.primary.main : "#000000"} // Set dark black color if active, otherwise use predefined color
-                 component="button"
-                 onClick={createSortHandler(headCell.id)}
-                 fontWeight="bold"
+                underline="none"
+                // color="red"
+                textColor={active ? muiTheme.palette.primary.main : "#000000"} // Set dark black color if active, otherwise use predefined color
+                component="button"
+                onClick={createSortHandler(headCell.id)}
+                fontWeight="bold"
                 // startDecorator={
                 //   headCell.numeric ? (
                 //     // <ArrowDownwardIcon sx={{ opacity: active ? 1 : 0 }} />
@@ -214,16 +214,14 @@ function EnhancedTableToolbar(props) {
         borderTopRightRadius: "var(--unstable_actionRadius)",
       }}
     >
-     
-        <Typography
-          level="h6"
-          sx={{ flex: "1 1 100%" }}
-          id="tableTitle"
-          component="div"
-        >
-          DSA SHEET
-        </Typography>
-      
+      <Typography
+        level="h6"
+        sx={{ flex: "1 1 100%" }}
+        id="tableTitle"
+        component="div"
+      >
+        DSA SHEET
+      </Typography>
     </Box>
   );
 }
@@ -242,49 +240,67 @@ export default function ArrayQuestion() {
   // const [page, setPage] = React.useState(0);
   // const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === "asc";
-    setOrder(isAsc ? "desc" : "asc");
-    setOrderBy(property);
-  };
+  // const handleRequestSort = (event, property) => {
+  //   const isAsc = orderBy === property && order === "asc";
+  //   setOrder(isAsc ? "desc" : "asc");
+  //   setOrderBy(property);
+  // };
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
-      setSelected(newSelected);
-      return;
-    }
-    setSelected([]);
-  };
+  // const handleSelectAllClick = (event) => {
+  //   if (event.target.checked) {
+  //     const newSelected = rows.map((n) => n.name);
+  //     setSelected(newSelected);
+  //     return;
+  //   }
+  //   setSelected([]);
+  // };
 
   const toggleBookmark = (index) => {
     const newBookmarkStates = [...bookmarkStates];
     newBookmarkStates[index] = !newBookmarkStates[index];
     setBookmarkStates(newBookmarkStates);
   };
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
+  // const handleClick = (event, name) => {
+  //   const selectedIndex = selected.indexOf(name);
+  //   let newSelected = [];
 
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
+  //   if (selectedIndex === -1) {
+  //     newSelected = newSelected.concat(selected, name);
+  //   } else if (selectedIndex === 0) {
+  //     newSelected = newSelected.concat(selected.slice(1));
+  //   } else if (selectedIndex === selected.length - 1) {
+  //     newSelected = newSelected.concat(selected.slice(0, -1));
+  //   } else if (selectedIndex > 0) {
+  //     newSelected = newSelected.concat(
+  //       selected.slice(0, selectedIndex),
+  //       selected.slice(selectedIndex + 1)
+  //     );
+  //   }
 
-    setSelected(newSelected);
+  //   setSelected(newSelected);
+  // };
+
+  // const handleClick = (event, name) => {
+  //   event.stopPropagation(); // Prevent row click event from triggering
+
+  //   // Toggle the selection of the clicked checkbox
+  //   toggleBookmark(name);
+  // };
+
+  // const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (name) => {
+    return selected.indexOf(name) !== -1;
   };
 
-  
-
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const toggleSelection = (name) => {
+  const newSelected = [...selected];
+  if (isSelected(name)) {
+    newSelected.splice(newSelected.indexOf(name), 1);
+  } else {
+    newSelected.push(name);
+  }
+  setSelected(newSelected);
+};
 
   return (
     <div className="page">
@@ -295,7 +311,7 @@ export default function ArrayQuestion() {
         height={20}
       />
 
-      <Sheet 
+      <Sheet
         variant="outlined"
         sx={{ width: "100%", boxShadow: "sm", borderRadius: "sm" }}
       >
@@ -305,7 +321,7 @@ export default function ArrayQuestion() {
           hoverRow
           sx={{
             "--TableCell-headBackground": "transparent",
-      
+
             "--TableCell-selectedBackground": (theme) =>
               theme.vars.palette.info.softBg,
             "& thead th:nth-child(1)": {
@@ -322,56 +338,60 @@ export default function ArrayQuestion() {
             numSelected={selected.length}
             order={order}
             orderBy={orderBy}
-            onSelectAllClick={handleSelectAllClick}
-            onRequestSort={handleRequestSort}
+            // onSelectAllClick={handleSelectAllClick}
+            // onRequestSort={handleRequestSort}
             rowCount={rows.length}
           />
           <tbody>
-            {stableSort(rows, getComparator(order, orderBy)).map(
-              (row, index) => {
-                const isItemSelected = isSelected(row.name);
-                const labelId = `enhanced-table-checkbox-${index}`;
+            {rows.map((row, index) => {
+              const isItemSelected = isSelected(row.name);
+              const labelId = `enhanced-table-checkbox-${index}`;
 
-                return (
-                  <tr
-                    onClick={(event) => handleClick(event, row.name)}
-                    role="checkbox"
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
-                    key={row.name}
-                  >
-                    <th scope="row" >
-                      <Checkbox
-                        checked={isItemSelected}
-                        slotProps={{
-                          input: {
-                            "aria-labelledby": labelId,
-                          },
-                        }}
-                        sx={{ verticalAlign: "top" }}
-                      />
-                    </th>
-                    <td id={labelId} scope="row">
-                      {row.name}
-                    </td>
-                    <td>
-                      <p style={{ display: "inline"}}>
-                        <a href={row.calories[0]} style={{ marginRight: '10px' }}>Link1         </a>
-                        <a href={row.calories[1]}>Link2</a>
-                      </p>
-                    </td>
-                    <td>{row.fat}</td>
-                    <td><IconButton onClick={() => toggleBookmark(index)}>
-                    {bookmarkStates[index] ? <BookmarksIcon /> : <BookmarkBorderIcon />}
-                  </IconButton></td>
-                  </tr>
-                );
-              }
-            )}
+              return (
+                <tr
+                  role="checkbox"
+                  aria-checked={isItemSelected}
+                  tabIndex={-1}
+                  key={row.name}
+                >
+                  <td>
+                    <Checkbox
+                      checked={isSelected(rows[index].name)}
+                      inputProps={{
+                        "aria-labelledby": labelId,
+                      }}
+                      onChange={() => toggleSelection(rows[index].name)} // Toggle selection by row name
+                      icon={<CheckBoxOutlineBlankOutlined />} // Custom icon for unchecked state
+                      checkedIcon={<CheckBoxOutlined />} // Custom icon for checked state
+                    />
+                  </td>
+                  <td id={labelId} scope="row">
+                    {row.name}
+                  </td>
+                  <td>
+                    <p style={{ display: "inline" }}>
+                      <a href={row.calories[0]} style={{ marginRight: "10px" }}>
+                        Link1
+                      </a>
+                      <a href={row.calories[1]}>Link2</a>
+                    </p>
+                  </td>
+                  <td>{row.fat}</td>
+                  <td>
+                    <IconButton onClick={() => toggleBookmark(index)}>
+                      {bookmarkStates[index] ? (
+                        <BookmarksIcon />
+                      ) : (
+                        <BookmarkBorderIcon />
+                      )}
+                    </IconButton>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </Sheet>
     </div>
   );
 }
-
