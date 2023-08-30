@@ -11,7 +11,7 @@ import {
   CheckBoxOutlineBlankOutlined,
   CheckBoxOutlined,
 } from "@mui/icons-material";
-
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 // import FormControl from '@mui/joy/FormControl';
 // import FormLabel from '@mui/joy/FormLabel';
 import IconButton from "@mui/joy/IconButton";
@@ -29,6 +29,10 @@ import { visuallyHidden } from "@mui/utils";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import { useState } from "react";
+import codingninjas from '../../../src/assets/CODING.jpg';
+import leet from '../../../src/assets/leetcode.svg';
+
+
 
 function createData(name, calories, fat) {
   // const [isBookmarked, setBookmarked] = useState(false);
@@ -371,12 +375,12 @@ export default function ArrayQuestion() {
                   <td>
                     <p style={{ display: "inline" }}>
                       <a href={row.calories[0]} style={{ marginRight: "10px" }}>
-                        Link1
+                        <img src = {codingninjas} style = {{width:"30px"}}></img>
                       </a>
-                      <a href={row.calories[1]}>Link2</a>
+                      <a href={row.calories[1]}> <img src = {leet} style = {{width:"25px"}}></img></a>
                     </p>
                   </td>
-                  <td>{row.fat}</td>
+                  <td><DescriptionOutlinedIcon></DescriptionOutlinedIcon></td>
                   <td>
                     <IconButton onClick={() => toggleBookmark(index)}>
                       {bookmarkStates[index] ? (
