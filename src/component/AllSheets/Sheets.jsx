@@ -38,8 +38,7 @@
 
 // export default Sheets;
 // // 
-
-
+import { useState,useEffect } from 'react';
 import { Grid } from '@mui/material';
 import CustomCard from './CustomCard';
 import striver from '../../../src/assets/striver.png';
@@ -49,21 +48,60 @@ import nishant from '../../../src/assets/nishant.png';
 import leetcode from '../../../src/assets/leetcode.jpg';
 import neetcode from '../../../src/assets/neetCode.png';
 import './Sheets.css';
+import axios from 'axios';
 
 const Sheets = () => {
+
+
+  const [sheets,setSheets] = useState([]);
+  
+  const imgs = [striver,nishant,loveBabbar,leetcode,neetcode,anuj]
+
+
+  useEffect(()=> {
+
+    const token = localStorage.getItem('loginToken');
+     
+    axios.get('http://localhost:5100/api/sheets/allsheets',{
+      headers: {
+        Authorization: `Bearer ${token}`, 
+      },
+    })
+    .then(res=> {
+        
+          //  setSheets(res.data)
+          console.log(res.data.sheets);
+          setSheets(res.data.sheets);
+    })
+    .catch(err=> {
+
+        console.log("All sheets", err)
+    })
+
+  },[])
+
+
   return (
     <div className="sheet-container">
-      <Grid container spacing={0}>
-        <Grid item xs={12} sm={6} md={4}>
+      <Grid container spacing={0} className='card-container'>
+      {sheets?.map((item, index)=> {
+           return (
+          <Grid item xs={12} sm={6} md={4} key={index}>
           <CustomCard
-            image={striver}
+            image={imgs[index]}
             alt = "title"
             className = "dsaSheetImg"
-            title="Card 1"
-            description="This is the first card."
+            title={item.title}
+            description={item.description}
+            question={item.questions}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+           )
+      })}
+        
+        
+        
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={loveBabbar}
             alt = "title"
@@ -71,8 +109,8 @@ const Sheets = () => {
             title="Card 2"
             description="This is the second card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={nishant}
             alt = "title"
@@ -80,8 +118,8 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={neetcode}
             alt = "title"
@@ -89,8 +127,8 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={striver}
             alt = "title"
@@ -98,8 +136,8 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={striver}
             alt = "title"
@@ -107,8 +145,8 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={anuj}
             alt = "title"
@@ -116,8 +154,8 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} sm={6} md={4}>
           <CustomCard
             image={leetcode}
             alt = "title"
@@ -125,7 +163,7 @@ const Sheets = () => {
             title="Card 3"
             description="This is the third card."
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

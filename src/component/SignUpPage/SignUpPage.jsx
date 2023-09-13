@@ -1,24 +1,48 @@
-
+import { useState } from 'react';
 import './SignUpPage.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 const SignUpPage = () => {
+
+     const [name, setName] = useState();
+     const [email, setEmail] = useState();
+     const [password, setPassword] = useState();
+     const [password_confirmation, setConfirmPass] = useState();
+     const navigate = useNavigate();
+     
+
+
+
+     const handleSubmit=(e)=> {
+      e.preventDefault();  
+      axios.post("http://localhost:5100/api/auth/registeruser", {name,email,password, password_confirmation})
+      .then(res=> {
+        console.log("Show me signup data",res);
+        navigate("/login")
+      })
+      .catch(err=> {
+        console.log(err);
+      })
+     }
+
+
   return (
     <>
       <div className="outer-box">
         <div className="inner-box">
           <header className="signup-header">
             <h1>Signup</h1>
-            <p>It just takes 30 seconds</p>
           </header>
           <main className="signup-body">
-            <form action="#">
+            <form onSubmit={handleSubmit}>
               <p>
                 <label htmlFor="fullname">Full Name</label>
                 <input
                   type="text"
                   id="fullname"
                   placeholder="Bill Gates"
-                  required=""
+                  onChange={(e)=> setName(e.target.value)}
                 />
               </p>
               <p>
@@ -27,7 +51,7 @@ const SignUpPage = () => {
                   type="email"
                   id="email"
                   placeholder="billgates@gmail.com"
-                  required=""
+                  onChange={(e)=> setEmail(e.target.value)}
                 />
               </p>
               <p>
@@ -36,7 +60,18 @@ const SignUpPage = () => {
                   type="password"
                   id="password"
                   placeholder="at least 5 characters"
+                  onChange={(e)=> setPassword(e.target.value)}
+                />
+              </p>
+
+              <p>
+                <label htmlFor="password-confirmation">Confirm Password</label>
+                <input
+                  type="password"
+                  id="password-confirmation"
+                  placeholder="Enter password again"
                   required=""
+                  onChange={(e)=> setConfirmPass(e.target.value)}
                 />
               </p>
               <p>

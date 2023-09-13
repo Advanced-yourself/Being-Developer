@@ -14,18 +14,15 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import CodeIcon from "@mui/icons-material/Code";
 import "./Navbar.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const pages = ["Home", "DSA", "Web Dev"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Account settings", "Logout"];
 
-
-
-const Navbar = ({toggleTheme, theme}) => {
+const Navbar = ({ toggleTheme, theme }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -56,33 +53,50 @@ const Navbar = ({toggleTheme, theme}) => {
     }
   }
 
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("loginToken");
+    navigate("/login");
+  };
+
+  const profile = () => {
+    navigate("/profile");
+  };
+
   return (
     <>
       <AppBar position="sticky" className="navbar">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
-          <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white", textDecoration: "none"}}>
-            <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: "0rem",
-                color: "inherit",
+            <Link
+              to="/"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
                 textDecoration: "none",
               }}
             >
-            
-              Being Developer
-            </Typography>
+              <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                sx={{
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: "0rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                Being Developer
+              </Typography>
             </Link>
-            
-            
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -114,39 +128,47 @@ const Navbar = ({toggleTheme, theme}) => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu} >
-                  
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
                     {page === "DSA" ? (
-
-                      <Link to="/dsa"><Typography textAlign="center">{page}</Typography></Link>
-                    )  : (
+                      <Link to="/dsa">
+                        <Typography textAlign="center">{page}</Typography>
+                      </Link>
+                    ) : (
                       <Typography textAlign="center">{page}</Typography>
-                    )
-                    }
+                    )}
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <Link to="/" style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white", textDecoration: "none"}}>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
+            <Link
+              to="/"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
                 textDecoration: "none",
               }}
             >
-              Being Developer
-            </Typography>
+              <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                Being Developer
+              </Typography>
             </Link>
             <Box
               sx={{
@@ -160,40 +182,42 @@ const Navbar = ({toggleTheme, theme}) => {
               }}
             >
               {pages.map((page) => (
-     <Link
-    to={getPageLink(page)}
-    key={page}
-    onClick={handleCloseNavMenu}
-  >
-      <Button 
-        sx={{
-          my: 2,
-          color: "white",
-          display: "block",
-          marginLeft: "40px",
-          marginRight: "20px",
-          paddingLeft: "10px",
-          paddingRight: "10px",
-          fontWeight: "600",
-          fontFamily: "sans-serif",
-          transition: "box-shadow 0.3s ease, transform 0.3s ease",
-          ":hover": {
-            transform: "scale(1.05)",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-          },
-        }}
-      >
-        {page}
-      </Button>
-    </Link>
-  
+                <Link
+                  to={getPageLink(page)}
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                >
+                  <Button
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      marginLeft: "40px",
+                      marginRight: "20px",
+                      paddingLeft: "10px",
+                      paddingRight: "10px",
+                      fontWeight: "600",
+                      fontFamily: "sans-serif",
+                      transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                      ":hover": {
+                        transform: "scale(1.05)",
+                        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+                      },
+                    }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
               ))}
             </Box>
 
             <Box sx={{ flexGrow: 2 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"/>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -214,20 +238,31 @@ const Navbar = ({toggleTheme, theme}) => {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    {setting === "Logout" ? (
+                      <Typography textAlign="center" onClick={logout}>
+                        {setting}
+                      </Typography>
+                    ) : (
+                      <Typography textAlign="center" onClick={profile} >{setting}</Typography>
+                    )}
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
 
             <div>
-              <input type="checkbox" className="checkbox" id="checkbox" onChange={toggleTheme} checked={theme === "dark"}/>
+              <input
+                type="checkbox"
+                className="checkbox"
+                id="checkbox"
+                onChange={toggleTheme}
+                checked={theme === "dark"}
+              />
               <label htmlFor="checkbox" className="checkbox-label">
-              <FontAwesomeIcon icon={faMoon} className="moon"/>
-              <FontAwesomeIcon icon={faSun} className="sun"/>
-              <span className="ball"></span>
+                <FontAwesomeIcon icon={faMoon} className="moon" />
+                <FontAwesomeIcon icon={faSun} className="sun" />
+                <span className="ball"></span>
               </label>
-              
             </div>
           </Toolbar>
         </Container>

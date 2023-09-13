@@ -37,7 +37,7 @@ import Typography from '@mui/material/Typography';
 // import CardContent from '@mui/material/CardContent';
 // import Typography from '@mui/material/Typography';
 
-const CustomCard = ({ image, title, description }) => {
+const CustomCard = ({ image, title, description,question }) => {
   return (
     <Card sx={{ maxWidth: 300, margin: '20px 17px' }}> {/* Add margin: '10px 0' */}
       <CardMedia
@@ -53,9 +53,9 @@ const CustomCard = ({ image, title, description }) => {
           {description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      <CardActions style={{display: "flex",justifyContent: "space-around"}}>
+        <button style={{borderRadius:"4px"}}>Solve Now</button>
+        <h4>{question} Questions to go</h4>
       </CardActions>
     </Card>
   );

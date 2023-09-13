@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import DsaSheet from "./pages/DsaSheet";
 import LearnWebDev from "./pages/LearnWebDev";
-import Login from "./pages/Login";
 import AllDsaSheets from "./pages/AllDsaSheets";
 import Bookmarks from "./pages/Bookmarks";
 import AllQuestionList from "./pages/AllQuestionList";
 import YourSheetPage from "./pages/YourSheetPage";
 import SignUpPage from "./component/SignUpPage/SignUpPage";
 import LoginPage from "./component/LoginPage/LoginPage";
+import Profile from "./pages/Profile";
+import Protected from "./component/Protected";
 
 
 export const ThemeContext = createContext(null);
@@ -30,15 +31,16 @@ const App = () => {
     <div className="App">
       <div id={theme}>
       <Routes>
-      <Route path="/" element={<Home toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa" element={<DsaSheet toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/web-practice" element={<LearnWebDev toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa/allSheets" element={<AllDsaSheets  toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa/YourSheet" element={<YourSheetPage toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa/bookmark"  element={<Bookmarks toggleTheme={toggleTheme} theme={theme}/>}/>
-      <Route path="/dsa/AllSheets/AllQuestions"  element={<AllQuestionList toggleTheme={toggleTheme} theme={theme} />}/>
-      <Route path="sign" element={<SignUpPage/>}/>
-      <Route path="login" element={<LoginPage/>}/>
+      <Route path="/" element={<Protected Component={Home} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/dsa" element={<Protected Component={DsaSheet} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/web-practice" element={<Protected Component={LearnWebDev} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/dsa/allSheets" element={<Protected Component={AllDsaSheets} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/dsa/YourSheet" element={<Protected Component={YourSheetPage} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/dsa/bookmark"  element={<Protected Component={Bookmarks} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/dsa/AllSheets/AllQuestions"  element={<Protected Component={AllQuestionList} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/profile"  element={<Protected Component={Profile} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/signup" element={<SignUpPage/>}/>
+      <Route path="/login" element={<LoginPage/>}/>
       </Routes>
       </div>
       </div>
