@@ -13,6 +13,9 @@ import SignUpPage from "./component/SignUpPage/SignUpPage";
 import LoginPage from "./component/LoginPage/LoginPage";
 import Profile from "./pages/Profile";
 import Protected from "./component/Protected";
+import CardState from "./context/cardState";
+import Card from "./component/Card/card";
+import Roadmap from "./component/Roadmap/roadmap";
 
 
 export const ThemeContext = createContext(null);
@@ -25,6 +28,7 @@ const App = () => {
   };
 
   return (
+    // <CardState>
     <Router>
     
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -41,11 +45,14 @@ const App = () => {
       <Route path="/profile"  element={<Protected Component={Profile} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/signup" element={<SignUpPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/card" element={<Card/>}/>
+      <Route path="/webDev/roadmap" element={<Roadmap/>}/>
       </Routes>
       </div>
       </div>
     </ThemeContext.Provider>
     </Router>
+    // </CardState>
   );
 };
 

@@ -3,8 +3,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+// import Button from '@mui/material/Button';
 
 // const CustomCard = ({ image, title, description }) => {
 //   return (
@@ -54,7 +56,8 @@ const CustomCard = ({ image, title, description,question }) => {
         </Typography>
       </CardContent>
       <CardActions style={{display: "flex",justifyContent: "space-around"}}>
-        <button style={{borderRadius:"4px"}}>Solve Now</button>
+        {/* <button style={{borderRadius:"4px"}}>Solve Now</button> */}
+        <Button>Solve Now</Button>/
         <h4>{question} Questions to go</h4>
       </CardActions>
     </Card>
