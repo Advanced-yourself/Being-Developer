@@ -1,48 +1,47 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Card from '@mui/material/Card';
+import MaterialUICard from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
-function BasicCard() {
+function Card() {
 
-  const { sheetId } = useParams();
+  const { id } = useParams();
   const [topics, setTopics] = useState([]);
-  console.log('sheetId:', sheetId); 
-
+  console.log('sheetId:', id); 
  
   useEffect(() => {
     // Fetch topics data from your API here and update the topics state
 
     const token = localStorage.getItem('loginToken');
     axios
-      .get(`http://localhost:5100/api/topics/getTopics/${sheetId}`,{
+      .get(`http://localhost:5100/api/topics/getTopics/${id}`,{
         headers: {
           Authorization: `Bearer ${token}`, 
         },
       })
       .then((response) => {
-        setTopics(response.data.topics); // Assuming the response contains an array of topics
+        setTopics(response.data.topics); 
       })
       .catch((error) => {
         console.error('Error fetching topics:', error);
       });
-  }, [sheetId]);
+  }, [id]);
 
   return (
-    <div>
-      {topics.map((topic) => (
-        <Card key={topic._id} sx={{ maxWidth: 275, margin: 2, padding: 2 }}>
+    <div style={{display: "flex", flexWrap: "wrap"}}>
+      {topics.map((pick) => (
+        <MaterialUICard key={pick._id} sx={{ maxWidth: 275, margin: 2, padding: 2}}>
           <CardContent>
             <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
               Be a good software Engineer
             </Typography>
             <Typography variant="h5" component="div">
-              {topic.name}
+              {pick.name}
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               Question completed 0/50
@@ -53,13 +52,15 @@ function BasicCard() {
             }} />
           </CardContent>
           <CardActions>
-            <Button size="small">Learn More</Button>
+          <Link to={`/dsa/AllSheets/Questions/${pick._id}`}>
+          <Button size="small">Learn More</Button>
+          </Link>
           </CardActions>
-        </Card>
+        </MaterialUICard>
       ))}
     </div>
   );
 }
 
-export default BasicCard;
+export default Card;
 

@@ -1,4 +1,4 @@
-// import React from "react";
+import {useState,useEffect} from "react";
 import Progressbar from "../ProgressBar/ProgressBar.jsx";
 import * as React from "react";
 import PropTypes from "prop-types";
@@ -28,9 +28,10 @@ import { visuallyHidden } from "@mui/utils";
 // import { useEffect,useState } from 'react';
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
-import { useState } from "react";
 import codingninjas from '../../../src/assets/CODING.jpg';
 import leet from '../../../src/assets/leetcode.svg';
+import { useParams } from 'react-router-dom';
+import axios from "axios";
 
 
 
@@ -234,7 +235,14 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
+
+
+
+
 export default function ArrayQuestion() {
+
+
+  const [questions, setQuestions] = useState([]);
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -305,6 +313,33 @@ export default function ArrayQuestion() {
   }
   setSelected(newSelected);
 };
+
+
+const {qid} = useParams();
+
+console.log(qid);
+
+useEffect(() => {
+  // Fetch topics data from your API here and update the topics state
+
+  const token = localStorage.getItem('loginToken');
+  axios
+    .get(`http://localhost:5100/api/questions/getQuestions/${qid}`,{
+      headers: {
+        Authorization: `Bearer ${token}`, 
+      },
+    })
+    .then((response) => {
+      console.log(response.data.questions);
+      setQuestions(response.data.questions); 
+    })
+    .catch((error) => {
+      console.error('Error fetching topics:', error);
+    });
+}, [qid]);
+
+
+
 
   return (
     <div className="page">
