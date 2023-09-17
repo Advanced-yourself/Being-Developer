@@ -29,3 +29,16 @@ export function CardProvider({ children }) {
 export function useCard() {
   return useContext(CardContext);
 }
+
+const [notes, setNotes] = useState(false);
+
+const handleIconClick = () => {
+  setNotes(!notes);
+  
+};
+
+
+<td>
+<DescriptionOutlinedIcon onClick={handleIconClick}/>        
+{notes && <BasicModalDialog onClose={() => setNotes(false)} />}          
+</td>
