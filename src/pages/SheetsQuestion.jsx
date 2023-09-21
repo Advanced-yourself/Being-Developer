@@ -1,5 +1,5 @@
 
-import ArrayQuestion from '../component/ArrayQuestions/ArrayQuestion';
+import ArrayQuestion from '../component/SheeetsQuestion/SheetsQuestion';
 import DsaNavbar from "../component/Dsa_Nav/DsaNavbar";
 import Footer from "../component/Footer/Footer";
 

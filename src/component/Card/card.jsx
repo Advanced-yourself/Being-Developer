@@ -46,7 +46,7 @@ function Card() {
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               Question completed 0/50
             </Typography>
-            <LinearProgress variant="determinate" value={50} valueBuffer={20} sx={{
+            <LinearProgress variant="determinate" value={50} valueBuffer={30} sx={{
               marginTop: '35px', // Adjust the margin as needed
               borderRadius: '30px' // Adjust the border radius as needed
             }} />

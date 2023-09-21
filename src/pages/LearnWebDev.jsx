@@ -6,7 +6,7 @@ const LearnWebDev = ({toggleTheme, theme}) => {
   return (
     <div>
     <Navbar toggleTheme={toggleTheme} theme={theme}/>
-    <LearnResources/>
+    <LearnResources  />
     <Footer/>
     </div>
   )

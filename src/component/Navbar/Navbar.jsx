@@ -12,7 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import CodeIcon from "@mui/icons-material/Code";
+import logo from "../../../src/assets/Logo.png";
+
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
@@ -79,7 +80,7 @@ const Navbar = ({ toggleTheme, theme }) => {
                 textDecoration: "none",
               }}
             >
-              <CodeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+              <img src = {logo}  alt="Logo" width="50" height="50" />
               <Typography
                 variant="h6"
                 noWrap
@@ -98,7 +99,7 @@ const Navbar = ({ toggleTheme, theme }) => {
               </Typography>
             </Link>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none", } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -215,7 +216,7 @@ const Navbar = ({ toggleTheme, theme }) => {
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
-                    alt="Remy Sharp"
+                    alt="User"
                     src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
                   />
                 </IconButton>

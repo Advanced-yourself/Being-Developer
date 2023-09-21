@@ -7,7 +7,7 @@ import DsaSheet from "./pages/DsaSheet";
 import LearnWebDev from "./pages/LearnWebDev";
 import AllDsaSheets from "./pages/AllDsaSheets";
 import Bookmarks from "./pages/Bookmarks";
-import AllQuestionList from "./pages/AllQuestionList";
+import AllQuestionList from "./pages/SheetsQuestion";
 import YourSheetPage from "./pages/YourSheetPage";
 import SignUpPage from "./component/SignUpPage/SignUpPage";
 import LoginPage from "./component/LoginPage/LoginPage";
@@ -15,7 +15,8 @@ import Profile from "./pages/Profile";
 import Protected from "./component/Protected";
 import CardState from "./context/CardState";
 import Card from "./component/Card/card";
-import Roadmap from "./component/Roadmap/Roadmap";
+import SheetsTopics from "./pages/SheetsTopics";
+import RoadmapPage from "./pages/Roadmap";
 
 
 export const ThemeContext = createContext(null);
@@ -45,8 +46,8 @@ const App = () => {
       <Route path="/profile"  element={<Protected Component={Profile} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/signup" element={<SignUpPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
-      <Route path="/dsa/allSheets/topic/:id" element={<Card/>}/>
-      <Route path="/webDev/roadmap" element={<Roadmap/>}/>
+      <Route path="/dsa/allSheets/topic/:id" element={<Protected Component={SheetsTopics} theme={theme} toggleTheme={toggleTheme}/>}/>
+      <Route path="/webDev/roadmap" element={<Protected Component={RoadmapPage} theme={theme} toggleTheme={toggleTheme}/>}/>
       </Routes>
       </div>
       </div>
