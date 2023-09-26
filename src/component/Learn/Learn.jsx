@@ -17,7 +17,9 @@ const Home = () => {
 
         <div className="WebDevContainer">
           <img src ={webImg} alt = "WebDev Container Image" className="WebDevSection"></img>
+          <Link to="/webDev">
           <button className="learn-btn">Web Development</button>
+          </Link>
         </div>
       </main>
     </>

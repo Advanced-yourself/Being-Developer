@@ -53,7 +53,7 @@ function Card() {
           </CardContent>
           <CardActions>
           <Link to={`/dsa/AllSheets/Questions/${pick._id}`}>
-          <Button size="small">Learn More</Button>
+          <Button size="small">Start Now</Button>
           </Link>
           </CardActions>
         </MaterialUICard>

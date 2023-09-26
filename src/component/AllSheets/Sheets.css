@@ -1,14 +1,6 @@
-
 .sheet-container {
-    /* width: 100%; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
-
-.dsaSheetImg {
-    width: 100%;
-    margin: 10px; 
-  }
 

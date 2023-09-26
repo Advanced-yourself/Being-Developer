@@ -1,0 +1,60 @@
+.shimmer-card {
+  width: 50%;
+  max-width: 300px; /* Adjust this to your desired card width */
+  background-color: #e9f2fc; /* Use white as the background color */
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  justify-content: center;
+
+}
+
+
+.shimmer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.shimmer-image {
+  height: 150px; /* Adjust this to your image height */
+  background: linear-gradient(
+    -90deg,
+    #ffffff 25%, /* Change to white */
+    #f0f0f0 50%, /* Use a slightly darker shade for the shimmer */
+    #ffffff 75% /* Change to white */
+  );
+  background-size: 200% 200%;
+  animation: shimmer-image 1.5s infinite;
+}
+
+.shimmer-text {
+  height: 20px;
+  margin-top: 12px;
+  background: linear-gradient(
+    -90deg,
+    #ffffff 25%, /* Change to white */
+    #f0f0f0 50%, /* Use a slightly darker shade for the shimmer */
+    #ffffff 75% /* Change to white */
+  );
+  background-size: 200% 200%;
+  animation: shimmer-text 1.5s infinite;
+}
+
+@keyframes shimmer-image {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shimmer-text {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

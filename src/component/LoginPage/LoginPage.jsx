@@ -56,7 +56,7 @@ const LoginPage = () => {
                 />
               </p>
               <p>
-                <label htmlFor="password">Your New Password</label>
+                <label htmlFor="password">Please Enter Your Password</label>
                 <input
                   type="password"
                   id="password"

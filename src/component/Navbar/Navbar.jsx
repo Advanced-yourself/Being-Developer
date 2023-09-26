@@ -44,7 +44,7 @@ const Navbar = ({ toggleTheme, theme }) => {
 
   function getPageLink(page) {
     if (page === "Web Dev") {
-      return "/web-practice";
+      return "/webDev";
     } else if (page === "DSA") {
       return "/dsa";
     } else if (page === "Home") {
@@ -80,23 +80,33 @@ const Navbar = ({ toggleTheme, theme }) => {
                 textDecoration: "none",
               }}
             >
-              <img src = {logo}  alt="Logo" width="50" height="50" />
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: "0rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
-              >
-                Being Developer
-              </Typography>
+               <div style={{ display: "flex", alignItems: "center" }}>
+                <img
+                  src="../../../src/assets/logo1.png"
+                  alt="Logo"
+                  width="60"
+                  height="60"
+                  style={{
+                    animation: "none",
+                    transition: "none",
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="a"
+                  href="/"
+                  sx={{
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: "0rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  Being Developer
+                </Typography>
+                </div>
             </Link>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none", } }}>
