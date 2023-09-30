@@ -13,11 +13,12 @@ import SignUpPage from "./component/SignUpPage/SignUpPage";
 import LoginPage from "./component/LoginPage/LoginPage";
 import Profile from "./pages/Profile";
 import Protected from "./component/Protected";
-import CardState from "./context/CardState";
-import Card from "./component/Card/card";
 import SheetsTopics from "./pages/SheetsTopics";
 import RoadmapPage from "./pages/Roadmap";
 import JavaScriptRoadmapPage from "./pages/JavaScriptRoadmap";
+import ForgetPasswordPage from "./pages/ForgetPassword";
+import OtpPage from "./pages/otpPage";
+
 
 
 export const ThemeContext = createContext(null);
@@ -45,8 +46,10 @@ const App = () => {
       <Route path="/dsa/bookmark"  element={<Protected Component={Bookmarks} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/dsa/AllSheets/Questions/:qid"  element={<Protected Component={AllQuestionList} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/profile"  element={<Protected Component={Profile} theme={theme} toggleTheme={toggleTheme}/>}/>
-      <Route path="/signup" element={<SignUpPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/ForgetPassword" element={<ForgetPasswordPage/>}/>
+      <Route path="/signup" element={<SignUpPage/>}/>
+      <Route path="/otp" element={<OtpPage/>}/>
       <Route path="/dsa/allSheets/topic/:id" element={<Protected Component={SheetsTopics} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/webDev" element={<Protected Component={RoadmapPage} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/JavaScriptRoadmap" element={<Protected Component={JavaScriptRoadmapPage} theme={theme} toggleTheme={toggleTheme}/>}/>
