@@ -18,6 +18,7 @@ import RoadmapPage from "./pages/Roadmap";
 import JavaScriptRoadmapPage from "./pages/JavaScriptRoadmap";
 import ForgetPasswordPage from "./pages/ForgetPassword";
 import OtpPage from "./pages/otpPage";
+import DialogBox from "./pages/Page"
 
 
 
@@ -49,6 +50,7 @@ const App = () => {
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/ForgetPassword" element={<ForgetPasswordPage/>}/>
       <Route path="/signup" element={<SignUpPage/>}/>
+      <Route path="/notes" element={<DialogBox/>}/>
       <Route path="/otp" element={<OtpPage/>}/>
       <Route path="/dsa/allSheets/topic/:id" element={<Protected Component={SheetsTopics} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/webDev" element={<Protected Component={RoadmapPage} theme={theme} toggleTheme={toggleTheme}/>}/>

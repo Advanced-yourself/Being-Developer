@@ -23,20 +23,34 @@ export default function ArrayQuestion() {
   const [questions, setQuestions] = useState([]);
   const [selected, setSelected] = useState([]); // Corrected state for selected items
   const [bookmarkStates, setBookmarkStates] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [iconType, setIconType] = useState("outlined");
-  const [selectAllNotes, setSelectAllNotes] = useState(false); // State to track select all notes
+  const [iconStates, setIconStates] = useState([]);
+  const [showModal, setShowModal] = useState(false); // State for showing/hiding the modal
+  const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(null); // Index of the selected question
 
   const toggleBookmark = (index) => {
     const newBookmarkStates = [...bookmarkStates];
     newBookmarkStates[index] = !newBookmarkStates[index];
     setBookmarkStates(newBookmarkStates);
   };
-  const handleDescriptionIconClick = () => {
-    setIconType(iconType === "outlined" ? "filled" : "outlined");
-    setIsModalOpen(true);
+
+  const toggleNotes = (index) => {
+    const newIconStates = [...iconStates];
+    newIconStates[index] = !newIconStates[index];
+    setIconStates(newIconStates);
+    setShowModal(true);
+    setSelectedQuestionIndex(index);
   };
 
+  const openDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+  };
+
+
+ 
   const isSelected = (name) => {
     return selected.indexOf(name) !== -1;
   };
@@ -166,15 +180,14 @@ export default function ArrayQuestion() {
                       </a>
                     </p>
                   </td>
-                  <td>
-                    {iconType === "outlined" ? (
-                      <DescriptionOutlinedIcon
-                        onClick={handleDescriptionIconClick}
-                      />
+                  <td onClick={() => toggleNotes(index)}>
+                    {iconStates[index] ? (
+                      <DescriptionIcon  onClick={openDialog} />
                     ) : (
-                      <DescriptionIcon onClick={handleDescriptionIconClick} />
+                      <DescriptionOutlinedIcon />
                     )}
                   </td>
+
                   <td>
                     <IconButton onClick={() => toggleBookmark(index)}>
                       {bookmarkStates[index] ? (
