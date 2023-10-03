@@ -1,14 +1,8 @@
-// export default ProgressBar;
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Box from "@mui/joy/Box";
 import CircularProgress from "@mui/joy/CircularProgress";
 
 const ProgressBar = ({ bgcolor, progress, height }) => {
-
-  const totalValue = 10;
-  const [currentValue, setCurrentValue] = useState(9);
-  const progressPercentage = (currentValue / totalValue) * 100;
-
   const Parentdiv = {
     height: height,
     width: "50%",
@@ -19,10 +13,11 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
 
   const Childdiv = {
     height: "100%",
-    width: `${progressPercentage}%`,
+    width: `${progress}%`, // Update the width based on the progress percentage
     backgroundColor: bgcolor,
     borderRadius: 40,
     textAlign: "right",
+    transition: "width 0.5s", // Add a transition for a smooth effect
   };
 
   const progresstext = {
@@ -31,13 +26,6 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
     fontWeight: 900,
   };
 
-
-  const handleIncrease = () => {
-    if (currentValue < totalValue) {
-      setCurrentValue(prevValue => prevValue + 1);
-    }
-  };
-  
   return (
     <div style={{ marginBottom: "20px" }}>
       <Box
@@ -50,13 +38,13 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
           left: "50%",
         }}
       >
-         <CircularProgress size="lg" determinate value = { progressPercentage}> 
-           {currentValue} / {totalValue}
-       </CircularProgress>
+        <CircularProgress size="lg" determinate value={progress}>
+          {`${progress}%`}
+        </CircularProgress>
       </Box>
       <div style={Parentdiv}>
         <div style={Childdiv}>
-          <span style={progresstext}>{`${progressPercentage}%`}</span>
+          <span style={progresstext}>{`${progress}%`}</span>
         </div>
       </div>
     </div>
@@ -64,5 +52,3 @@ const ProgressBar = ({ bgcolor, progress, height }) => {
 };
 
 export default ProgressBar;
-
-
