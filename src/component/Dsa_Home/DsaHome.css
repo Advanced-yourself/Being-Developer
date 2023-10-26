@@ -1,51 +1,6 @@
-.dsa-container {
-  width: 100%;
-  min-height: 75vh;
+.sheet-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  flex-direction: column;
-  row-gap: 23px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-h3,  button{
-  display: block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-
-button {
-  background-color: rgb(46, 46, 250);
-  color: white;
-  padding: 15px;
-  border-radius: 30px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-img:hover {
-    animation: shake 2s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  
-  @keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }
-  

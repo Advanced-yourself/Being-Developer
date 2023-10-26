@@ -1,9 +1,6 @@
-
 .navbar{
-  /* position: fixed; */
   top: 0;
   background-color: #f2f2f2;
-  /* padding: 16px; */
   z-index: 9999;
 }
 .checkbox {
@@ -53,4 +50,42 @@
  
 .class{
   background-color: #f1660f;
+}
+
+
+@media screen and (max-width: 600px) {
+  
+  .logo-text {
+
+    display: none;
+  }
+
+
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+
+
+  #logo-img {
+
+     width: 40px;
+     height: 40px;
+     margin-right: 40px;
+  }
+
+  .hamburg {
+
+    position: absolute;
+    left: 300px;
+  }
+
+  .mode-size-mobile {
+
+    font-size: 20px;
+    position: absolute;
+    left: 160px;
+  }
 }

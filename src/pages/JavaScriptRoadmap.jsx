@@ -1,4 +1,3 @@
-import React from 'react'
 import JavaScriptRoadmap from '../component/JavaScriptRoadmap/JavaScriptRoadmap'
 import Navbar from '../component/Navbar/Navbar'
 import Footer from '../component/Footer/Footer'

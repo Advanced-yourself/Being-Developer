@@ -11,15 +11,11 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-// import CodeIcon from "@mui/icons-material/Code";
-// import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
-import "../Navbar/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-// import {logo} from "../../../src/assets/Logo.png"
+import "../Navbar/Navbar.css";
 
 const pages = ["HOME", "YOUR SHEET", "ALL SHEETS", "BOOKMARK"];
 const settings = ["Profile", "Logout"];
@@ -53,14 +49,18 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
     } else if (page === "BOOKMARK") {
       return "/dsa/bookmark";
     } else {
-      return "/dsa"; // Fallback link if page value doesn't match any specific case
+      return "/dsa"; 
     }
   }
   return (
     <>
       <AppBar position="sticky" className="navbar">
         <Container maxWidth="lg">
-          <Toolbar disableGutters>
+          <Toolbar
+            disableGutters
+        
+            className="navbar-mobile"
+          >
             <Link
               to="/"
               style={{
@@ -70,8 +70,9 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                 color: "white",
                 textDecoration: "none",
               }}
+              
             >
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "center" }} >
                 <img
                   src="../../../src/assets/logo1.png"
                   alt="Logo"
@@ -82,6 +83,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                     transition: "none",
                     // marginRight: "10px",
                   }}
+                  id="logo-img"
                 />
                 <Typography
                   variant="h6"
@@ -93,16 +95,17 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                     fontWeight: 700,
                     letterSpacing: "0rem",
                     color: "inherit",
-      
+
                     textDecoration: "none",
                   }}
+                  className="logo-text"
                 >
                   Being Developer
                 </Typography>
               </div>
             </Link>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} className="hamburg">
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -133,43 +136,15 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Link to="/dsa">
+                    <Link to={getPageLink(page)}>
                       <Typography textAlign="center">{page}</Typography>
                     </Link>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <Link
-              to="/"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "white",
-                textDecoration: "none",
-              }}
-            >
-              <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href=""
-                sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  flexGrow: 1,
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
-              >
-                Being Developer
-              </Typography>
-            </Link>
+
+
             <Box
               sx={{
                 flexGrow: 2,
@@ -180,6 +155,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                   alignItems: "center",
                 },
               }}
+              
             >
               {pages.map((page) => (
                 <Link
@@ -206,7 +182,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 2 }}>
+            <Box sx={{ flexGrow: 2 }} >
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -239,7 +215,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               </Menu>
             </Box>
 
-            <div>
+            <div className="mode-size-mobile" >
               <input
                 type="checkbox"
                 className="checkbox"
