@@ -46,7 +46,7 @@ export default function BasicModalDialog({ open, onClose, onSave, initialNotes }
                 placeholder="Enter your notes here"
               />
             </FormControl>
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Save</Button>
           </Stack>
         </form>
       </ModalDialog>

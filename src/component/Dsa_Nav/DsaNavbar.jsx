@@ -49,18 +49,14 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
     } else if (page === "BOOKMARK") {
       return "/dsa/bookmark";
     } else {
-      return "/dsa"; 
+      return "/dsa";
     }
   }
   return (
     <>
       <AppBar position="sticky" className="navbar">
         <Container maxWidth="lg">
-          <Toolbar
-            disableGutters
-        
-            className="navbar-mobile"
-          >
+          <Toolbar disableGutters className="navbar-mobile">
             <Link
               to="/"
               style={{
@@ -70,11 +66,16 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                 color: "white",
                 textDecoration: "none",
               }}
-              
             >
-              <div style={{ display: "flex", alignItems: "center" }} >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
                 <img
-                  src="../../../src/assets/logo1.png"
+                  src="../../../src/assets/logo.png"
                   alt="Logo"
                   width="60"
                   height="60"
@@ -95,8 +96,8 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                     fontWeight: 700,
                     letterSpacing: "0rem",
                     color: "inherit",
-
                     textDecoration: "none",
+                    marginTop: "-10px", // Adjust this value to reduce the space
                   }}
                   className="logo-text"
                 >
@@ -105,7 +106,10 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               </div>
             </Link>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} className="hamburg">
+            <Box
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+              className="hamburg"
+            >
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -144,7 +148,6 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               </Menu>
             </Box>
 
-
             <Box
               sx={{
                 flexGrow: 2,
@@ -155,7 +158,6 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                   alignItems: "center",
                 },
               }}
-              
             >
               {pages.map((page) => (
                 <Link
@@ -182,7 +184,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 2 }} >
+            <Box sx={{ flexGrow: 2 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -215,7 +217,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
               </Menu>
             </Box>
 
-            <div className="mode-size-mobile" >
+            <div className="mode-size-mobile">
               <input
                 type="checkbox"
                 className="checkbox"
