@@ -59,7 +59,7 @@ const Sheets = () => {
           {sheets?.map((item, index) => {
             return (
               <Grid item xs={12} sm={6} md={4} key={index} style={{ display: "flex", flexWrap: "wrap",justifyContent:"center"}}>
-                <Card sx={{ minWidth: 350, margin: "20px 17px" }}>
+                <Card sx={{ minWidth: 350, margin: "20px 17px", boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
                   <CardMedia
                     sx={{ height: 190}}
                     image={imgs[index]}

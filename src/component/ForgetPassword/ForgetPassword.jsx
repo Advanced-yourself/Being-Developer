@@ -30,6 +30,7 @@ const SignUpPage = () => {
   return (
     <>
       <div className="outer-box">
+        <h4 style = {{textAlign:'center',color:'red'}}>This Functionality is not implemented yet</h4>
         <div className="inner-box">
           <header className="signup-header">
             <h1>Forget Password</h1>

@@ -1,15 +1,15 @@
 
-import "../Bookmark/Bookmark.css";
+import "../Profile/Profile.css";
 
-const Bookmark = () => {
+const Profile = () => {
   return (
-    <div className='bookmark-container'>
+    <div className='Profile-container'>
     <h1 style={{
       textAlign: "center",
       fontSize: "24px",
       // fontWeight: "bold"
     }}>
-      Bookmark Questions will Appear here
+      Profile will Appear here
       <p style={{
         fontSize: "14px",
         color: "red",
@@ -23,4 +23,4 @@ const Bookmark = () => {
   )
 }
 
-export default Bookmark;
+export default Profile;

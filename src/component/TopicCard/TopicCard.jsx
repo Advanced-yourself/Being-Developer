@@ -127,7 +127,7 @@ function Card({ progressPercentage }) {
         topics.map((pick) => (
           <MaterialUICard
             key={pick._id}
-            sx={{ maxWidth: 275, margin: 2, padding: 2 }}
+            sx={{ maxWidth: 275, margin: 2, padding: 2,boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}
           >
             <CardContent>
               <Typography

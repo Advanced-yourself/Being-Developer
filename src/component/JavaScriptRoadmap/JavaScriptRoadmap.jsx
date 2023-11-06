@@ -1479,7 +1479,7 @@ const JavaScriptRoadmap = () => {
               fontWeight="normal"
               fontSize="20px"
             >
-              <tspan>Powered By Being Developer</tspan>
+              <tspan style = {{"justifyContent":"center"}}>Powered By Being Developer</tspan>
             </text>
             <text
               x={1052}

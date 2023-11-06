@@ -39,6 +39,13 @@ const Navbar = ({ toggleTheme, theme }) => {
     setAnchorElUser(null);
   };
 
+  const handleLogout = () => {
+    console.log("Logout button clicked"); // Check if this message is logged
+    localStorage.removeItem("token-info");
+    window.location.href = "/login";
+  };
+
+
   function getPageLink(page) {
     if (page === "Home") {
       return "/";
@@ -46,8 +53,7 @@ const Navbar = ({ toggleTheme, theme }) => {
       return "/dsa";
     } else if (page === "Web Dev") {
       return "/webdev";
-    } 
-     else {
+    } else {
       return "/dsa";
     }
   }
@@ -210,7 +216,19 @@ const Navbar = ({ toggleTheme, theme }) => {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    {setting === "Profile" ? (
+                       <Link to="/profile"> {/* Use Link to navigate to '/profile' */}
+                       <Button color="primary">
+                         <Typography textAlign="center">{setting}</Typography>
+                       </Button>
+                     </Link>
+                    ) : setting === "Logout" ? (
+                      <Button onClick={handleLogout} color="primary">
+                        <Typography textAlign="center">{setting}</Typography>
+                      </Button>
+                    ) : (
+                      <Typography textAlign="center">{setting}</Typography>
+                    )}
                   </MenuItem>
                 ))}
               </Menu>

@@ -64,7 +64,7 @@ const LoginPage = () => {
                   onChange={(e)=> setPassword(e.target.value)}
                 />
               </p>
-          <p style={{textAlign:"center"}}>&nbsp; <Link to="/signup">Forget Password?</Link></p>
+          <p style={{textAlign:"center"}}>&nbsp; <Link to="/ForgetPassword">Forget Password?</Link></p>
               <p>
                 <input type="submit" id="submit" defaultValue="Login" />
               </p>
