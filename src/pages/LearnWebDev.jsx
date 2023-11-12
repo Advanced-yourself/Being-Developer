@@ -4,11 +4,11 @@ import LearnResources from "../component/LearnWebDev/LearnResources";
 
 const LearnWebDev = ({toggleTheme, theme}) => {
   return (
-    <div>
+    <>
     <Navbar toggleTheme={toggleTheme} theme={theme}/>
     <LearnResources  />
     <Footer/>
-    </div>
+    </>
   )
 }
 

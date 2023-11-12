@@ -33,6 +33,7 @@ import leet from "../../../src/assets/leetcode.svg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import BasicModalDialog from "../Notes_box/NotesBox.jsx";
+import { BASE_URL } from "../../src/config.js";
 
 function createData(name, calories, fat) {
   // const [isBookmarked, setBookmarked] = useState(false);
@@ -318,7 +319,7 @@ export default function ArrayQuestion() {
 
     const token = localStorage.getItem("loginToken");
     axios
-      .get(`http://localhost:5100/api/questions/getQuestions/${qid}`, {
+      .get(`${BASE_URL}api/questions/getQuestions/${qid}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -5,11 +5,11 @@ import Form from '../component/Profile/Profile';
 
 const Profile = ({toggleTheme, theme}) => {
   return (
-    <div>
+    <>
       <Navbar toggleTheme={toggleTheme} theme={theme}/>
       <Form/>
       <Footer/>
-    </div>
+    </>
   )
 }
 

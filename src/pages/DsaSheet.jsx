@@ -5,11 +5,11 @@ import Footer from "../component/Footer/Footer";
 const DsaSheet = ({toggleTheme, theme}) => {
   
   return (
-    <div>
+    <>
       <DsaNavbar toggleTheme={toggleTheme} theme={theme}/>
       <DsaHome toggleTheme={toggleTheme} theme={theme}/>
       <Footer/>
-    </div>
+    </>
   )
 }
 

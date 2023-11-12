@@ -4,11 +4,11 @@ import Footer from '../component/Footer/Footer';
 
 const DsaResources = () => {
   return (
-    <div>
+    <>
         <DsaNavbar/>
         <DsaResources/>
-        <Footer/>      
-    </div>
+        <Footer />      
+    </>
   )
 }
 

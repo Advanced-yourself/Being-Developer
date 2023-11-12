@@ -1,6 +1,5 @@
+import { Dsa, WebDev } from "../../utils/image";
 import "./Learn.css";
-import webImg from "../../../src/assets/asset1.png";
-import dsaImg from "../../../src/assets/asset2.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -9,14 +8,14 @@ const Home = () => {
     <h1>LEARN</h1>
       <main className="learn-container">
         <div className="DsaContainer">
-          <img src ={dsaImg} alt = "Dsa Container Image" className="DsaSection"/>
+          <img src ={Dsa} alt = "Dsa Container Image" className="DsaSection"/>
           <Link to="/dsa">
           <button className="learn-btn">Data Structures & Algorithms</button>
           </Link>
         </div>
 
         <div className="WebDevContainer">
-          <img src ={webImg} alt = "WebDev Container Image" className="WebDevSection"></img>
+          <img src ={WebDev} alt = "WebDev Container Image" className="WebDevSection"></img>
           <Link to="/webDev">
           <button className="learn-btn">Web Development</button>
           </Link>

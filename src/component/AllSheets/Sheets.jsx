@@ -17,32 +17,46 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./Sheets.css";
 import axios from "axios";
+import { BASE_URL } from "../../config";
+import { serverIssue } from "../../utils/image";
 
 const Sheets = () => {
   const [sheets, setSheets] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  const imgs = [loveBabbar,striver2,neetcode,leetcode,striver,nishant];
+  const imgs = [striver2,loveBabbar,leetcode,neetcode,striver,nishant];
 
   useEffect(() => {
     const token = localStorage.getItem("loginToken");
-
-    axios
-      .get("http://localhost:5100/api/sheets/allsheets", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data.sheets);
-        setSheets(res.data.sheets);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log("All sheets", err);
-        setLoading(false);
-      });
+    // console.log("Token Console",token);
+    if(token){
+      // console.log("Api called");
+      handleSheet(token);
+    }
   }, []);
+
+  const handleSheet = (token) =>{
+    console.log(BASE_URL);
+    axios
+    .get(`${BASE_URL}api/sheets/allsheets`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      console.log(res.data.sheets);
+      console.log(res.data);
+      setSheets(res.data.sheets);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("Error fetching sheets:", err);
+        setError(true);
+        setLoading(false);
+    });
+
+  }
 
   // Create an array of length 10 to render 10 shimmer cards
   const shimmerCards = Array.from({ length: 15 }, (_, index) => (
@@ -54,7 +68,10 @@ const Sheets = () => {
       {loading ? (
         // Render the shimmer cards
         shimmerCards
-      ) : (
+      ) 
+      : error ? (
+        <img src = {serverIssue} alt="Error Image" className="error-image" />
+      ): (
         <Grid container spacing={0} className="card-container">
           {sheets?.map((item, index) => {
             return (

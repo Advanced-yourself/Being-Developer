@@ -1,11 +1,18 @@
 const JavaScriptRoadmap = () => {
   return (
-    <div>
+    <div
+        style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "30px",
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="101 179 1178 2968"
-        style={{ fontFamily: "balsamiq" }}
+        style={{ fontFamily: "balsamiq",maxWidth: "90%"  }}
       >
         <path
           d="M957 2185Q955.2005945878495 2123.2822984959507 957 2043"
@@ -1472,14 +1479,14 @@ const JavaScriptRoadmap = () => {
             />
            
             <text
-              x={1004}
+              x={986}
               y="294.5"
               fill="rgb(255,255,255)"
               fontStyle="normal"
               fontWeight="normal"
               fontSize="20px"
             >
-              <tspan style = {{"justifyContent":"center"}}>Powered By Being Developer</tspan>
+              <tspan>Powered By Being Developer</tspan>
             </text>
             <text
               x={1052}

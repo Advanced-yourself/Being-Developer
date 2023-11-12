@@ -81,3 +81,16 @@ body {
     color: #555;
     text-align: center;
 }
+
+.Submitbtn{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cccc;
+    background-color: #3498db;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 4px;
+    justify-content: center;
+    margin-left: 10px;
+
+}

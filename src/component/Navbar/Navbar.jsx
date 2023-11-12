@@ -16,6 +16,7 @@ import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../Navbar/Navbar.css";
+import { Logo, ProfileIcon } from "../../utils/image";
 
 const pages = ["Home", "DSA", "Web Dev"];
 const settings = ["Profile", "Logout"];
@@ -80,7 +81,7 @@ const Navbar = ({ toggleTheme, theme }) => {
                 }}
               >
                 <img
-                  src="../../../src/assets/logo.png"
+                  src= {Logo}
                   alt="Logo"
                   width="60"
                   height="60"
@@ -194,7 +195,7 @@ const Navbar = ({ toggleTheme, theme }) => {
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
                     alt="User Img"
-                    src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                    src={ProfileIcon}
                   />
                 </IconButton>
               </Tooltip>

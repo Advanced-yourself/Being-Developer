@@ -8,20 +8,21 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./DsaHome.css";
+import { DsaAdv, DsaBasics, JavaScript, Python } from "../../utils/image";
 
 const LearningResoucesCard = () => {
   const resources = [
     {
       title: "DSA Basics",
       description: "Fundamental data structures and algorithms.",
-      image: "../../../src/assets/dsaBasic.png",
+      image: DsaBasics,
       link: "https://www.youtube.com/watch?v=5_5oE5lgrhw&list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi",
       questions: 92,
     },
     {
       title: "Advanced Algorithms",
       description: "In-depth algorithms and problem-solving techniques.",
-      image: "../../../src/assets/dsaAlgo.jpg",
+      image: DsaAdv,
       link: "https://www.youtube.com/@takeUforward/playlists",
       questions: 25,
     },
@@ -42,14 +43,14 @@ const LearningResoucesCard = () => {
     {
       title: "DSA IN PYTHON",
       description: "Data structures and algorithms in Python.",
-      image: "../../../src/assets/dsaPy.jpg",
+      image: Python,
       link: "https://www.youtube.com/watch?v=UljGkm2ikdY&list=PLrk5tgtnMN6TYBW0-U4YhIRyYEVpqVEnJ",
       questions: 101,
     },
     {
       title: "DSA IN JAVASCRIPT",
       description: "Data structures and algorithms in JS.",
-      image: "../../../src/assets/dsaJs.jpg",
+      image: JavaScript,
       link: "https://www.youtube.com/watch?v=5mEwh4MfwB4&pp=ygURZHNhIGluIGphdmFzY3JpcHQ%3D",
       questions: 1,
     },
@@ -57,7 +58,8 @@ const LearningResoucesCard = () => {
   ];
 
   return (
-    <div className="sheet-container">
+    <div style={{minHeight:"100vh"}}>
+    <div className="sheetContainer">
       <Grid container spacing={2} className="card-container" >
         {resources.map((resource, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}  style={{ display: "flex", flexWrap: "wrap",justifyContent:"center"}}>
@@ -95,6 +97,7 @@ const LearningResoucesCard = () => {
           </Grid>
         ))}
       </Grid>
+    </div>
     </div>
   );
 };

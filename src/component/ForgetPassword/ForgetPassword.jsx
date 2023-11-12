@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './ForgetPassword.css';
 import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../../config';
 
 const SignUpPage = () => {
 
@@ -16,7 +17,7 @@ const SignUpPage = () => {
 
      const handleSubmit=(e)=> {
       e.preventDefault();  
-      axios.post("http://localhost:5100/api/auth/registeruser", {name,email,password, password_confirmation})
+      axios.post(`${BASE_URL}api/auth/registeruser`, {name,email,password, password_confirmation})
       .then(res=> {
         console.log("Show me signup data",res);
         navigate("/login")

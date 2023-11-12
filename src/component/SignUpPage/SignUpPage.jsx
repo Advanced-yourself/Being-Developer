@@ -1,31 +1,53 @@
 import { useState } from 'react';
 import './SignUpPage.css';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../../config';
 
 const SignUpPage = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password_confirmation, setConfirmPass] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-     const [name, setName] = useState();
-     const [email, setEmail] = useState();
-     const [password, setPassword] = useState();
-     const [password_confirmation, setConfirmPass] = useState();
-     const navigate = useNavigate();
-     
+  const handleSubmit = (e) => {
+    console.log('Signup Button Clicked');
+    e.preventDefault();
+  
+    // Check if any of the input fields is empty
+    if (!name || !email || !password || !password_confirmation) {
+      window.alert('All fields are required');
+      return;
+    }
 
-
-
-     const handleSubmit=(e)=> {
-      e.preventDefault();  
-      axios.post("http://localhost:5100/api/auth/registeruser", {name,email,password, password_confirmation})
-      .then(res=> {
-        console.log("Show me signup data",res);
-        navigate("/login")
+    if (password !== password_confirmation) {
+      window.alert('Password and Confirm Password do not match');
+      return;
+    }
+  
+    setLoading(true); // Set loading to true on form submission
+  
+    axios
+      .post(`${BASE_URL}api/auth/registeruser`, {
+        name,
+        email,
+        password,
+        password_confirmation,
       })
-      .catch(err=> {
+      .then((res) => {
+        console.log('Show me signup data', res);
+        navigate('/login');
+      })
+      .catch((err) => {
         console.log(err);
       })
-     }
-
+      .finally(() => {
+        setLoading(false); // Set loading back to false when the request is complete
+      });
+  };
+  
 
   return (
     <>
@@ -42,7 +64,8 @@ const SignUpPage = () => {
                   type="text"
                   id="fullname"
                   placeholder="Bill Gates"
-                  onChange={(e)=> setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
+                  disabled={loading}
                 />
               </p>
               <p>
@@ -51,7 +74,8 @@ const SignUpPage = () => {
                   type="email"
                   id="email"
                   placeholder="billgates@gmail.com"
-                  onChange={(e)=> setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                 />
               </p>
               <p>
@@ -60,7 +84,8 @@ const SignUpPage = () => {
                   type="password"
                   id="password"
                   placeholder="at least 5 characters"
-                  onChange={(e)=> setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
+                  disabled={loading}
                 />
               </p>
 
@@ -71,24 +96,26 @@ const SignUpPage = () => {
                   id="password-confirmation"
                   placeholder="Enter password again"
                   required=""
-                  onChange={(e)=> setConfirmPass(e.target.value)}
+                  onChange={(e) => setConfirmPass(e.target.value)}
+                  disabled={loading}
                 />
               </p>
               <p>
-                <input
-                  type="submit"
-                  id="submit"
-                  defaultValue="Create Account"
-                />
+                {loading ? (
+                  <button className='Submitbtn' type="submit" id="submit" disabled>
+                    Creating Account...
+                  </button>
+                ) : (
+                  <button  className = "Submitbtn" type="submit" id="submit">
+                    Create Account
+                  </button>
+                )}
               </p>
             </form>
           </main>
           <footer className="signup-footer">
-          {/* <Link to="/dsa">
-          <button className="learn-btn">Data Structures & Algorithms</button>
-          </Link> */}
             <p>
-              Already have an Account? <Link to = "/login"> <a href="#">Login</a> </Link>{" "}
+              Already have an Account? <Link to="/login"> <a href="#">Login</a> </Link>{' '}
             </p>
           </footer>
         </div>

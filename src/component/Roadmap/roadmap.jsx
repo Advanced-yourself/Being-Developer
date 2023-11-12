@@ -3,12 +3,19 @@ import JavaScriptRoadmap from "../JavaScriptRoadmap/JavaScriptRoadmap";
 
 const Roadmap = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "30px",
+      }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="143 186 1230 3288"
-        style={{ fontFamily: "balsamiq" }}
+        style={{ fontFamily: "balsamiq", maxWidth: "90%" }}
       >
         <path
           d="M270 3061Q270.2750526352174 3119.499620656887 270 3172.7917043667803"
@@ -699,28 +706,30 @@ const Roadmap = () => {
             className="clickable-group"
             data-group-id="json:frontend-beginner.json"
           >
-            <rect
-              x="1062.35"
-              y="319.35"
-              width="280.3"
-              height="44.3"
-              rx={2}
-              fill="rgb(65,53,214)"
-              fillOpacity={1}
-              stroke="rgb(65,53,214)"
-              strokeWidth="2.7"
-            />
-            <text
-              x={1097}
-              y="348.5"
-              fill="rgb(255,255,255)"
-              fontStyle="normal"
-              fontWeight="normal"
-              fontSize="18px"
-              
-            >
-              <Link to = "/JavaScriptRoadmap"> <tspan>JavaScript Roadmap</tspan></Link> 
-            </text>
+            <Link to="/JavaScriptRoadmap">
+              <rect
+                x="1062.35"
+                y="319.35"
+                width="280.3"
+                height="44.3"
+                rx={2}
+                fill="rgb(65,53,214)"
+                fillOpacity={1}
+                stroke="rgb(65,53,214)"
+                strokeWidth="2.7"
+              />
+              <text
+                x={1130}
+                y="348.5"
+                fill="rgb(255,255,255)"
+                fontStyle="normal"
+                fontWeight="normal"
+                fontSize="18px"
+                
+              >
+                <tspan>Javascript Roadmap</tspan>
+              </text>
+            </Link>
           </g>
           <text
             x={1061}
@@ -730,7 +739,7 @@ const Roadmap = () => {
             fontWeight="normal"
             fontSize="18px"
           >
-            <tspan>         Click Here to get JavaScript Roadmap</tspan>
+            <tspan> Click Here to get JavaScript Roadmap</tspan>
           </text>
         </g>
         <g>
@@ -837,53 +846,58 @@ const Roadmap = () => {
           strokeDasharray="undefined"
         />
         <g className="clickable-group" data-group-id="100-internet">
-          <rect
-            x="688.35"
-            y="453.35"
-            width="172.3"
-            height="47.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={744}
-            y="483.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Internet</tspan>
-          </text>
+          <a href="https://cs.fyi/guide/how-does-internet-work" target="blank">
+            <rect
+              x="688.35"
+              y="453.35"
+              width="172.3"
+              height="47.3"
+              rx={2}
+              fill="rgb(255,255,0)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+
+            <text
+              x={744}
+              y="483.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Internet</tspan>
+            </text>
+          </a>
         </g>
         <g
           className="clickable-group"
           data-group-id="100-internet:how-does-the-internet-work"
         >
-          <rect
-            x="1013.35"
-            y="452.35"
-            width="296.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1050}
-            y="481.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>How does the internet work?</tspan>
-          </text>
+          <a href="https://cs.fyi/guide/how-does-internet-work" target="blank">
+            <rect
+              x="1013.35"
+              y="452.35"
+              width="296.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1050}
+              y="481.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>How does the internet work?</tspan>
+            </text>
+          </a>
           <circle cx={1307} cy={474} r={10} fill="rgb(255,255,255)" />
           <circle cx={1307} cy={474} r={10} fill="rgb(153,0,255)" />
           <path
@@ -899,27 +913,32 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="101-internet:what-is-http"
         >
-          <rect
-            x="1013.35"
-            y="506.35"
-            width="296.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1102}
-            y={536}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
+          <a
+            href="https://thenewstack.io/http-3-is-now-a-standard-why-use-it-and-how-to-get-started/"
+            target="blank"
           >
-            <tspan>What is HTTP?</tspan>
-          </text>
+            <rect
+              x="1013.35"
+              y="506.35"
+              width="296.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1102}
+              y={536}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>What is HTTP?</tspan>
+            </text>
+          </a>
           <circle cx={1307} cy={528} r={10} fill="rgb(255,255,255)" />
           <circle cx={1307} cy={528} r={10} fill="rgb(153,0,255)" />
           <path
@@ -935,27 +954,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-internet:browsers-and-how-they-work"
         >
-          <rect
-            x="1013.35"
-            y="722.35"
-            width="296.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1046}
-            y="751.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Browsers and how they work?</tspan>
-          </text>
+          <a href="https://web.dev/articles/howbrowserswork" target="blank">
+            <rect
+              x="1013.35"
+              y="722.35"
+              width="296.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1046}
+              y="751.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Browsers and how they work?</tspan>
+            </text>
+          </a>
           <circle cx={1307} cy={744} r={10} fill="rgb(255,255,255)" />
           <circle cx={1307} cy={744} r={10} fill="rgb(153,0,255)" />
           <path
@@ -971,27 +992,32 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="103-internet:dns-and-how-it-works"
         >
-          <rect
-            x="1013.35"
-            y="668.35"
-            width="295.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1071}
-            y={698}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
+          <a
+            href="https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/"
+            target="blank"
           >
-            <tspan>DNS and how it works?</tspan>
-          </text>
+            <rect
+              x="1013.35"
+              y="668.35"
+              width="295.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1071}
+              y={698}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>DNS and how it works?</tspan>
+            </text>
+          </a>
           <circle cx={1305} cy={690} r={10} fill="rgb(255,255,255)" />
           <circle cx={1305} cy={690} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1007,27 +1033,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="104-internet:what-is-domain-name"
         >
-          <rect
-            x="1013.35"
-            y="560.35"
-            width="296.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1067}
-            y={590}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>What is Domain Name?</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=Y4cRx19nhJk" target="blank">
+            <rect
+              x="1013.35"
+              y="560.35"
+              width="296.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1067}
+              y={590}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>What is Domain Name?</tspan>
+            </text>
+          </a>
           <circle cx={1306} cy={582} r={10} fill="rgb(255,255,255)" />
           <circle cx={1306} cy={582} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1043,27 +1071,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="105-internet:what-is-hosting"
         >
-          <rect
-            x="1013.35"
-            y="614.35"
-            width="295.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1086}
-            y={644}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>What is hosting?</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=AXVZYzw8geg" target="blank">
+            <rect
+              x="1013.35"
+              y="614.35"
+              width="295.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1086}
+              y={644}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>What is hosting?</tspan>
+            </text>
+          </a>
           <circle cx={1305} cy={636} r={10} fill="rgb(255,255,255)" />
           <circle cx={1305} cy={636} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1111,27 +1141,30 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="100-html:learn-the-basics"
         >
-          <rect
-            x="470.35"
-            y="552.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={531}
-            y="581.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Learn the basics</tspan>
-          </text>
+          <a href="https://www.w3schools.com/html/" target="blank">
+            <rect
+              x="470.35"
+              y="552.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+
+            <text
+              x={531}
+              y="581.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Learn the basics</tspan>
+            </text>
+          </a>
           <circle cx={722} cy={574} r={10} fill="rgb(255,255,255)" />
           <circle cx={722} cy={574} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1147,27 +1180,32 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="101-html:writing-semantic-html"
         >
-          <rect
-            x="470.35"
-            y="605.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={503}
-            y={635}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
+          <a
+            href="https://blog.hubspot.com/website/semantic-html"
+            target="blank"
           >
-            <tspan>Writing Semantic HTML</tspan>
-          </text>
+            <rect
+              x="470.35"
+              y="605.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={503}
+              y={635}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Writing Semantic HTML</tspan>
+            </text>
+          </a>
           <circle cx={722} cy={627} r={10} fill="rgb(255,255,255)" />
           <circle cx={722} cy={627} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1183,27 +1221,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-html:forms-and-validations"
         >
-          <rect
-            x="470.35"
-            y="659.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={512}
-            y={689}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Forms and Validations</tspan>
-          </text>
+          <a href="https://web.dev/learn/forms/" target="blank">
+            <rect
+              x="470.35"
+              y="659.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={512}
+              y={689}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Forms and Validations</tspan>
+            </text>
+          </a>
           <circle cx={721} cy={681} r={10} fill="rgb(255,255,255)" />
           <circle cx={721} cy={681} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1216,27 +1256,32 @@ const Roadmap = () => {
           />
         </g>
         <g className="clickable-group" data-group-id="104-html:accessibility">
-          <rect
-            x="471.35"
-            y="713.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={548}
-            y={743}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
+          <a
+            href="https://www.udacity.com/course/web-accessibility--ud891"
+            target="blank"
           >
-            <tspan>Accessibility</tspan>
-          </text>
+            <rect
+              x="471.35"
+              y="713.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={548}
+              y={743}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Accessibility</tspan>
+            </text>
+          </a>
           <circle cx={723} cy={735} r={10} fill="rgb(255,255,255)" />
           <circle cx={723} cy={735} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1249,27 +1294,29 @@ const Roadmap = () => {
           />
         </g>
         <g className="clickable-group" data-group-id="105-html:seo-basics">
-          <rect
-            x="471.35"
-            y="767.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={552}
-            y="796.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>SEO Basics</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=xsVTqzratPs" target="blank">
+            <rect
+              x="471.35"
+              y="767.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={552}
+              y="796.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>SEO Basics</tspan>
+            </text>
+          </a>
           <circle cx={724} cy={789} r={10} fill="rgb(255,255,255)" />
           <circle cx={724} cy={789} r={10} fill="rgb(153,153,153)" />
           <path
@@ -1282,50 +1329,54 @@ const Roadmap = () => {
           />
         </g>
         <g className="clickable-group" data-group-id="102-css">
-          <rect
-            x="187.35"
-            y="844.35"
-            width="183.3"
-            height="47.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={262}
-            y="875.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>CSS</tspan>
-          </text>
+          <a href="https://100dayscss.com/" target="blank">
+            <rect
+              x="187.35"
+              y="844.35"
+              width="183.3"
+              height="47.3"
+              rx={2}
+              fill="rgb(255,255,0)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={262}
+              y="875.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>CSS</tspan>
+            </text>
+          </a>
         </g>
         <g className="clickable-group" data-group-id="101-css:making-layouts">
-          <rect
-            x="471.35"
-            y="898.35"
-            width="198.3"
-            height="44.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={506}
-            y="926.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Making Layouts</tspan>
-          </text>
+          <a href="https://cssgrid.io/" target="blank">
+            <rect
+              x="471.35"
+              y="898.35"
+              width="198.3"
+              height="44.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={506}
+              y="926.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Making Layouts</tspan>
+            </text>
+          </a>
           <circle cx={667} cy={918} r={10} fill="rgb(255,255,255)" />
           <circle cx={667} cy={918} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1338,27 +1389,29 @@ const Roadmap = () => {
           />
         </g>
         <g className="clickable-group" data-group-id="100-css:learn-the-basics">
-          <rect
-            x="471.35"
-            y="844.35"
-            width="198.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={507}
-            y="873.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Learn the basics</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=FqmB-Zj2-PA" target="blank">
+            <rect
+              x="471.35"
+              y="844.35"
+              width="198.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={507}
+              y="873.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Learn the basics</tspan>
+            </text>
+          </a>
           <circle cx={667} cy={866} r={10} fill="rgb(255,255,255)" />
           <circle cx={667} cy={866} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1374,27 +1427,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-css:responsive-design-and-media-queries"
         >
-          <rect
-            x="472.35"
-            y="950.35"
-            width="198.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={497}
-            y="979.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Responsive Design</tspan>
-          </text>
+          <a href="https://web.dev/learn/design/" target="blank">
+            <rect
+              x="472.35"
+              y="950.35"
+              width="198.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={497}
+              y="979.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Responsive Design</tspan>
+            </text>
+          </a>
           <circle cx={668} cy={972} r={10} fill="rgb(255,255,255)" />
           <circle cx={668} cy={972} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1416,53 +1471,57 @@ const Roadmap = () => {
           strokeDasharray="undefined"
         />
         <g className="clickable-group" data-group-id="103-javascript">
-          <rect
-            x="801.35"
-            y="1033.35"
-            width="206.3"
-            height="47.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={864}
-            y="1063.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <Link to = "/JavaScriptRoadmap" ><tspan>JavaScript</tspan></Link>
-          </text>
+          <a href="https://javascript30.com/" target="blank">
+            <rect
+              x="801.35"
+              y="1033.35"
+              width="206.3"
+              height="47.3"
+              rx={2}
+              fill="rgb(255,255,0)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={864}
+              y="1063.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>JavaScript</tspan>
+            </text>
+          </a>
         </g>
         <g
           className="clickable-group"
           data-group-id="100-javascript:syntax-and-basic-constructs"
         >
-          <rect
-            x="778.35"
-            y="844.35"
-            width="260.3"
-            height="44.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={844}
-            y="872.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Learn the Basics</tspan>
-          </text>
+          <a href="https://javascript.info/" target="blank">
+            <rect
+              x="778.35"
+              y="844.35"
+              width="260.3"
+              height="44.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={844}
+              y="872.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Learn the Basics</tspan>
+            </text>
+          </a>
           <circle cx={779} cy={865} r={10} fill="rgb(255,255,255)" />
           <circle cx={779} cy={865} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1478,27 +1537,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="101-javascript:learn-dom-manipulation"
         >
-          <rect
-            x="778.35"
-            y="896.35"
-            width="261.3"
-            height="44.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={810}
-            y="924.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Learn DOM Manipulation</tspan>
-          </text>
+          <a href="https://www.w3schools.com/js/js_htmldom.asp" target="blank">
+            <rect
+              x="778.35"
+              y="896.35"
+              width="261.3"
+              height="44.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={810}
+              y="924.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Learn DOM Manipulation</tspan>
+            </text>
+          </a>
           <circle cx={779} cy={917} r={10} fill="rgb(255,255,255)" />
           <circle cx={779} cy={917} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1514,27 +1575,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-javascript:learn-fetch-api-ajax-xhr"
         >
-          <rect
-            x="777.35"
-            y="947.35"
-            width="263.3"
-            height="44.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={821}
-            y={976}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Fetch API / Ajax (XHR)</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=-ZI0ea5O2oA" target="blank">
+            <rect
+              x="777.35"
+              y="947.35"
+              width="263.3"
+              height="44.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={821}
+              y={976}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Fetch API / Ajax (XHR)</tspan>
+            </text>
+          </a>
           <circle cx={778} cy={968} r={10} fill="rgb(255,255,255)" />
           <circle cx={778} cy={968} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1550,79 +1613,85 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="104-version-control-systems"
         >
-          <rect
-            x="1116.35"
-            y="862.35"
-            width="238.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1143}
-            y={892}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Version Control Systems</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=zbKdDsNNOhg" target="blank">
+            <rect
+              x="1116.35"
+              y="862.35"
+              width="238.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,255,0)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1143}
+              y={892}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Version Control Systems</tspan>
+            </text>
+          </a>
         </g>
         <g
           className="clickable-group"
           data-group-id="105-repo-hosting-services"
         >
-          <rect
-            x="1116.35"
-            y="916.35"
-            width="238.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1187}
-            y={946}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>VCS Hosting</tspan>
-          </text>
+          <a href="https://about.gitlab.com/" target="blank">
+            <rect
+              x="1116.35"
+              y="916.35"
+              width="238.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,255,0)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1187}
+              y={946}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>VCS Hosting</tspan>
+            </text>
+          </a>
         </g>
         <g
           className="clickable-group"
           data-group-id="100-version-control-systems:basic-usage-of-git"
         >
-          <rect
-            x="1263.35"
-            y="802.35"
-            width="87.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1294}
-            y={832}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Git</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="blank">
+            <rect
+              x="1263.35"
+              y="802.35"
+              width="87.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1294}
+              y={832}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Git</tspan>
+            </text>
+          </a>
           <circle cx={1349} cy={824} r={10} fill="rgb(255,255,255)" />
           <circle cx={1349} cy={824} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1638,27 +1707,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="100-repo-hosting-services:github"
         >
-          <rect
-            x="1217.35"
-            y="992.35"
-            width="136.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1259}
-            y={1023}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>GitHub</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="blank">
+            <rect
+              x="1217.35"
+              y="992.35"
+              width="136.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1259}
+              y={1023}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>GitHub</tspan>
+            </text>
+          </a>
           <circle cx={1352} cy={1012} r={10} fill="rgb(255,255,255)" />
           <circle cx={1352} cy={1012} r={10} fill="rgb(153,0,255)" />
           <path
@@ -1674,27 +1745,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-repo-hosting-services:bitbucket"
         >
-          <rect
-            x="1217.35"
-            y="1097.35"
-            width="135.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1252}
-            y="1126.5"
-            fill="rgb(51,51,51)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Bitbucket</tspan>
-          </text>
+          <a href="https://bitbucket.org/product/guides" target="blank">
+            <rect
+              x="1217.35"
+              y="1097.35"
+              width="135.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1252}
+              y="1126.5"
+              fill="rgb(51,51,51)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Bitbucket</tspan>
+            </text>
+          </a>
           <circle cx={1350} cy={1118} r={10} fill="rgb(255,255,255)" />
           <circle cx={1350} cy={1118} r={10} fill="rgb(255,255,255)" />
           <circle cx={1350} cy={1118} r={10} fill="rgb(56,118,29)" />
@@ -1711,27 +1784,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="101-repo-hosting-services:gitlab"
         >
-          <rect
-            x="1217.35"
-            y="1044.35"
-            width="134.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1259}
-            y={1074}
-            fill="rgb(51,51,51)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>GitLab</tspan>
-          </text>
+          <a href="https://docs.gitlab.com/" target="blank">
+            <rect
+              x="1217.35"
+              y="1044.35"
+              width="134.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={1259}
+              y={1074}
+              fill="rgb(51,51,51)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>GitLab</tspan>
+            </text>
+          </a>
           <circle cx={1349} cy={1066} r={10} fill="rgb(255,255,255)" />
           <circle cx={1349} cy={1066} r={10} fill="rgb(255,255,255)" />
           <circle cx={1349} cy={1066} r={10} fill="rgb(56,118,29)" />
@@ -1786,27 +1861,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="102-web-security-knowledge:cors"
         >
-          <rect
-            x="450.35"
-            y="2010.35"
-            width="115.3"
-            height="45.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={484}
-            y="2038.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>CORS</tspan>
-          </text>
+          <a href="https://www.youtube.com/watch?v=PNtFSVU-YTI" target="blank">
+            <rect
+              x="450.35"
+              y="2010.35"
+              width="115.3"
+              height="45.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={484}
+              y="2038.5"
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>CORS</tspan>
+            </text>
+          </a>
           <g>
             <circle cx={558} cy={2031} r={10} fill="rgb(255,255,255)" />
             <circle cx={558} cy={2031} r={10} fill="rgb(153,153,153)" />
@@ -1824,27 +1901,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="100-web-security-knowledge:https"
         >
-          <rect
-            x="573.35"
-            y="2009.35"
-            width="131.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={612}
-            y={2039}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>HTTPS</tspan>
-          </text>
+          <a href="https://web.dev/articles/why-https-matters" target="blank">
+            <rect
+              x="573.35"
+              y="2009.35"
+              width="131.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={612}
+              y={2039}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>HTTPS</tspan>
+            </text>
+          </a>
           <g>
             <circle cx={702} cy={2031} r={10} fill="rgb(255,255,255)" />
             <circle cx={702} cy={2031} r={10} fill="rgb(153,153,153)" />
@@ -1862,27 +1941,29 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="101-web-security-knowledge:content-security-policy"
         >
-          <rect
-            x="450.35"
-            y="2062.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={490}
-            y={2092}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Content Security Policy</tspan>
-          </text>
+          <a href="https://web.dev/articles/csp" target="blank">
+            <rect
+              x="450.35"
+              y="2062.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={490}
+              y={2092}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>Content Security Policy</tspan>
+            </text>
+          </a>
           <g>
             <circle cx={702} cy={2084} r={10} fill="rgb(255,255,255)" />
             <circle cx={702} cy={2084} r={10} fill="rgb(153,153,153)" />
@@ -1900,27 +1981,32 @@ const Roadmap = () => {
           className="clickable-group"
           data-group-id="103-web-security-knowledge:owasp-security-risks"
         >
-          <rect
-            x="450.35"
-            y="2115.35"
-            width="254.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={493}
-            y={2145}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
+          <a
+            href="https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html"
+            target="blank"
           >
-            <tspan>OWASP Security Risks</tspan>
-          </text>
+            <rect
+              x="450.35"
+              y="2115.35"
+              width="254.3"
+              height="46.3"
+              rx={2}
+              fill="rgb(255,229,153)"
+              fillOpacity={1}
+              stroke="rgb(0,0,0)"
+              strokeWidth="2.7"
+            />
+            <text
+              x={493}
+              y={2145}
+              fill="rgb(0,0,0)"
+              fontStyle="normal"
+              fontWeight="normal"
+              fontSize="17px"
+            >
+              <tspan>OWASP Security Risks</tspan>
+            </text>
+          </a>
           <g>
             <circle cx={702} cy={2137} r={10} fill="rgb(255,255,255)" />
             <circle cx={702} cy={2137} r={10} fill="rgb(153,153,153)" />
@@ -1939,294 +2025,6 @@ const Roadmap = () => {
             x="1116.35"
             y="1351.35"
             width="208.3"
-            height="50.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1146}
-            y={1383}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Package Managers</tspan>
-          </text>
-        </g>
-        <g className="clickable-group" data-group-id="100-package-managers:npm">
-          <rect
-            x="1219.35"
-            y="1178.35"
-            width="131.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1267}
-            y="1206.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>npm</tspan>
-          </text>
-          <circle cx={1348} cy={1198} r={10} fill="rgb(255,255,255)" />
-          <circle cx={1348} cy={1198} r={10} fill="rgb(153,0,255)" />
-          <path
-            d="M1342.5 1198L1346.5 1202 1353 1195.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g
-          className="clickable-group"
-          data-group-id="101-package-managers:yarn"
-        >
-          <rect
-            x="1219.35"
-            y="1284.35"
-            width="131.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1268}
-            y="1312.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>yarn</tspan>
-          </text>
-          <circle cx={1348} cy={1306} r={10} fill="rgb(255,255,255)" />
-          <circle cx={1348} cy={1306} r={10} fill="rgb(56,118,29)" />
-          <path
-            d="M1342.5 1306L1346.5 1310 1353 1303.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g
-          className="clickable-group"
-          data-group-id="102-package-managers:pnpm"
-        >
-          <rect
-            x="1219.35"
-            y="1231.35"
-            width="131.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={1263}
-            y="1259.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>pnpm</tspan>
-          </text>
-          <circle cx={1345} cy={1253} r={10} fill="rgb(255,255,255)" />
-          <circle cx={1345} cy={1253} r={10} fill="rgb(56,118,29)" />
-          <path
-            d="M1339.5 1253L1343.5 1257 1350 1250.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g className="clickable-group" data-group-id="109-css-preprocessors">
-          <rect
-            x="153.35"
-            y="1537.35"
-            width="213.3"
-            height="47.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={185}
-            y={1567}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>CSS Preprocessors</tspan>
-          </text>
-        </g>
-        <g
-          className="clickable-group"
-          data-group-id="101-css-preprocessors:postcss"
-        >
-          <rect
-            x="291.35"
-            y="1685.35"
-            width="143.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={329}
-            y={1715}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>PostCSS</tspan>
-          </text>
-          <circle cx={430} cy={1707} r={10} fill="rgb(255,255,255)" />
-          <circle cx={430} cy={1707} r={10} fill="rgb(153,153,153)" />
-          <path
-            d="M424.5 1707L428.5 1711 435 1704.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g
-          className="clickable-group"
-          data-group-id="100-css-preprocessors:sass"
-        >
-          <rect
-            x="291.35"
-            y="1630.35"
-            width="143.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={340}
-            y="1659.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>Sass</tspan>
-          </text>
-          <circle cx={431} cy={1652} r={10} fill="rgb(255,255,255)" />
-          <circle cx={431} cy={1652} r={10} fill="rgb(153,153,153)" />
-          <path
-            d="M425.5 1652L429.5 1656 436 1649.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g className="clickable-group" data-group-id="108-css-architecture">
-          <rect
-            x="276.35"
-            y="1353.35"
-            width="172.3"
-            height="47.3"
-            rx={2}
-            fill="rgb(255,255,0)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={297}
-            y={1383}
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>CSS Architecture</tspan>
-          </text>
-        </g>
-        <g className="clickable-group" data-group-id="100-css-architecture:bem">
-          <rect
-            x="291.35"
-            y="1431.35"
-            width="148.3"
-            height="46.3"
-            rx={2}
-            fill="rgb(255,229,153)"
-            fillOpacity={1}
-            stroke="rgb(0,0,0)"
-            strokeWidth="2.7"
-          />
-          <text
-            x={343}
-            y="1460.5"
-            fill="rgb(0,0,0)"
-            fontStyle="normal"
-            fontWeight="normal"
-            fontSize="17px"
-          >
-            <tspan>BEM</tspan>
-          </text>
-          <circle cx={437} cy={1453} r={10} fill="rgb(255,255,255)" />
-          <circle cx={437} cy={1453} r={10} fill="rgb(153,153,153)" />
-          <path
-            d="M431.5 1453L435.5 1457 442 1450.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <path
-          d="M927.5307772237954 1377.5108274871286Q912.9183808223783 1377.749750206597 896.3990595440735 1377.5108274871286"
-          fill="none"
-          stroke="rgb(43,120,228)"
-          strokeWidth={4}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="0.8 12"
-        />
-        <g className="clickable-group" data-group-id="111-pick-a-framework">
-          <rect
-            x="841.35"
-            y="1351.35"
-            width="210.3"
             height="50.3"
             rx={2}
             fill="rgb(255,255,0)"

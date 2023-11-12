@@ -4,11 +4,11 @@ import Footer from "../component/Footer/Footer";
 
 const Home = ({toggleTheme, theme}) => {
   return (
-    <div className='Home'>
+    <>
         <Navbar toggleTheme={toggleTheme} theme={theme} />
         <Learn/>
         <Footer/>
-    </div>
+    </>
   )
 }
 

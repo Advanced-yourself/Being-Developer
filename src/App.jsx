@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import "./App.css";
 // import "./component/Footer/Footer.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -27,8 +27,14 @@ export const ThemeContext = createContext(null);
 const App = () => {
   const [theme, setTheme] = useState("light");
 
-  const toggleTheme = () => {
+  useEffect(()=>{ const theme = localStorage.getItem('theme')
+  if(theme){
+    setTheme(theme)
+  }
+ },[])
+    const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    localStorage.setItem("theme",theme === "light" ? "dark" : "light");
   };
 
   return (
@@ -37,7 +43,7 @@ const App = () => {
     
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
     <div className="App">
-      <div id={theme}>
+      <div id={theme} className="main">
       <Routes>
       <Route path="/" element={<Protected Component={Home} theme={theme} toggleTheme={toggleTheme}/>}/>
       <Route path="/dsa" element={<Protected Component={DsaSheet} theme={theme} toggleTheme={toggleTheme}/>}/>

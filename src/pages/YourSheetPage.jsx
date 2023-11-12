@@ -5,11 +5,11 @@ import YourSheet from "../component/YourSheet/YourSheet";
 
 const YourSheetPage = ({toggleTheme, theme}) => {
   return (
-    <div>
+    <>
     <DsaNavbar toggleTheme={toggleTheme} theme={theme}/>
     <YourSheet toggleTheme={toggleTheme} theme={theme}/>
     <Footer/>
-    </div>
+    </>
   )
 }
 

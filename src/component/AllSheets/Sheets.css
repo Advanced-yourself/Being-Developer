@@ -2,5 +2,11 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  min-height: 100vh;
 }
 
+.error-image{
+  width: 80vw;
+  max-height: 80vh;
+  justify-content: center;
+}
