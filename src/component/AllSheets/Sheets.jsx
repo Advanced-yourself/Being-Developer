@@ -59,7 +59,7 @@ const Sheets = () => {
   }
 
   // Create an array of length 10 to render 10 shimmer cards
-  const shimmerCards = Array.from({ length: 15 }, (_, index) => (
+  const shimmerCards = Array.from({ length: 6 }, (_, index) => (
     <ShimmerCard key={index} />
   ));
 
@@ -75,8 +75,8 @@ const Sheets = () => {
         <Grid container spacing={0} className="card-container">
           {sheets?.map((item, index) => {
             return (
-              <Grid item xs={12} sm={6} md={4} key={index} style={{ display: "flex", flexWrap: "wrap",justifyContent:"center"}}>
-                <Card sx={{ minWidth: 350, margin: "20px 17px", boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
+              <Grid item xs={12} sm={6} md={4} key={index} className="Grid-container">
+                <Card sx={{ minWidth: "20rem", margin: "20px 17px", boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
                   <CardMedia
                     sx={{ height: 190}}
                     image={imgs[index]}

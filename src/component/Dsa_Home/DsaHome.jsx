@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./DsaHome.css";
-import { DsaAdv, DsaBasics, JavaScript, Python } from "../../utils/image";
+import { Cpp, DsaAdv, DsaBasics, Java, JavaScript, Python } from "../../utils/image";
 
 const LearningResoucesCard = () => {
   const resources = [
@@ -29,14 +29,14 @@ const LearningResoucesCard = () => {
     {
       title: "DSA IN C++",
       description: "Data structures and algorithms in C++.",
-      image: "../../../src/assets/dsaCpp.jpg",
+      image: Cpp,
       link: "https://www.youtube.com/watch?v=WQoB2z67hvY&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
       questions: 149,
     },
     {
       title: "DSA IN JAVA",
       description: "Data structures and algorithms in JAVA.",
-      image: "../../../src/assets/dsaJava.jpg",
+      image: Java,
       link: "https://www.youtube.com/watch?v=rZ41y93P2Qo&list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ",
       questions: 56,
     },

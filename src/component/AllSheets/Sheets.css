@@ -3,6 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
+  
 }
 
 .error-image{
@@ -10,3 +11,4 @@
   max-height: 80vh;
   justify-content: center;
 }
+
