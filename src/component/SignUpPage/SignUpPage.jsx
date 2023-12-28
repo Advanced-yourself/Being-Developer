@@ -22,6 +22,16 @@ const SignUpPage = () => {
       return;
     }
 
+    if(name.length < 3){
+      window.alert('Name must be at least 3 characters long');
+      return;
+    }
+
+    if(password.length < 5){
+      window.alert('Password must be at least 5 characters long');
+      return;
+    }
+
     if (password !== password_confirmation) {
       window.alert('Password and Confirm Password do not match');
       return;

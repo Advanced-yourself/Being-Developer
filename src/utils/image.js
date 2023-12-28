@@ -11,4 +11,5 @@ import ProfileIcon from "../assets/ProfileIcon.avif"
 import serverIssue from "../assets/server.svg"
 import leetCode from "../assets/leetCode.svg"
 import codingNinjas from "../assets/CODING.jpg"
-export {Logo,Cpp,Java,Python,JavaScript,DsaBasics,DsaAdv,WebDev,Dsa,ProfileIcon,serverIssue,leetCode,codingNinjas};
+import striver_79 from "../assets/striver_79.jpg"
+export {Logo,Cpp,Java,Python,JavaScript,DsaBasics,DsaAdv,WebDev,Dsa,ProfileIcon,serverIssue,leetCode,codingNinjas,striver_79};

@@ -18,14 +18,14 @@ import { Link } from "react-router-dom";
 import "./Sheets.css";
 import axios from "axios";
 import { BASE_URL } from "../../config";
-import { serverIssue } from "../../utils/image";
+import { serverIssue, striver_79 } from "../../utils/image";
 
 const Sheets = () => {
   const [sheets, setSheets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const imgs = [striver2,loveBabbar,leetcode,neetcode,striver,nishant];
+  const imgs = [loveBabbar,striver2,neetcode,leetcode,striver,nishant,striver_79];
 
   useEffect(() => {
     const token = localStorage.getItem("loginToken");

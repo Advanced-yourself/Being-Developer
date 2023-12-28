@@ -12,20 +12,22 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!password && !email) {
+      window.alert("All fields are required");
+    }
     setLoading(true); // Set loading to true on form submission
     axios
       .post(`${BASE_URL}api/auth/login`, { email, password })
       .then((res) => {
         console.log(res);
         const token = res.data.token;
-        const message = res.data.message;
+        // const message = res.data.message;
+      
         if (token) {
           localStorage.setItem("loginToken", token);
           window.alert("Login Successful");
-          navigate("/");
-        } else if (message === "All fields are required") {
-          window.alert("All fields are required");
         } else {
+          navigate("/signup");
           window.alert("Invalid Credentials. Either email or password is wrong");
         }
       })
@@ -68,7 +70,9 @@ const LoginPage = () => {
           <p style={{textAlign:"center"}}>&nbsp; <Link to="/ForgetPassword">Forget Password?</Link></p>
               <p>
                 {loading?( <button className="LoadingBtn">Loading....</button>
-                ) :(<input type="submit" id="submit" defaultValue="Login" />)}
+                ) :( <button  className = "submitBtn" type="submit" id="submit">
+                Submit
+              </button>)}
                
               </p>
             </form>
