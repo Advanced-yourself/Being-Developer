@@ -6,7 +6,7 @@ const Protected = (props) => {
     const {Component, theme,toggleTheme} = props;
     const navigate = useNavigate();
     useEffect(()=> {
-     let login = localStorage.getItem('loginToken');
+     let login = localStorage.getItem('token');
      if(!login)
      {
         navigate('/login');
