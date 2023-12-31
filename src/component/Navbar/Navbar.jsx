@@ -41,8 +41,8 @@ const Navbar = ({ toggleTheme, theme }) => {
   };
 
   const handleLogout = () => {
-    console.log("Logout button clicked");
-    localStorage.removeItem("token");
+    console.log("Logout button clicked"); // Check if this message is logged
+    localStorage.removeItem("token-info");
     window.location.href = "/login";
   };
 

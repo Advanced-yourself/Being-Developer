@@ -20,8 +20,6 @@ import ForgetPasswordPage from "./pages/ForgetPassword";
 import OtpPage from "./pages/otpPage";
 import DialogBox from "./pages/Page";
 import Preloader from "./component/Preloader/Preloader";
-import Error from "./component/ErrorPage/ErrorPage";
-import Logout from "./pages/Logout";
 
 export const ThemeContext = createContext(null);
 
@@ -158,7 +156,6 @@ const App = () => {
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/notes" element={<DialogBox />} />
                 <Route path="/otp" element={<OtpPage />} />
-                <Route path="/logout" element={<Logout/>} />
                 <Route
                   path="/dsa/allSheets/topic/:id"
                   element={
@@ -189,7 +186,6 @@ const App = () => {
                     />
                   }
                 />
-                <Route path="*" element={<Error />} />
               </Routes>
             </div>
           )}
