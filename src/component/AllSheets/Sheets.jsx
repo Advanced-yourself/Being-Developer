@@ -28,7 +28,7 @@ const Sheets = () => {
   const imgs = [loveBabbar,striver2,neetcode,leetcode,striver,nishant,striver_79];
 
   useEffect(() => {
-    const token = localStorage.getItem("loginToken");
+    const token = localStorage.getItem("token");
     // console.log("Token Console",token);
     if(token){
       // console.log("Api called");
