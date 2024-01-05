@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -39,11 +40,13 @@ const Navbar = ({ toggleTheme, theme }) => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+const navigate = useNavigate();
+
 
   const handleLogout = () => {
     console.log("Logout button clicked");
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
 

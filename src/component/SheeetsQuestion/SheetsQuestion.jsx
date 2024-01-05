@@ -67,7 +67,7 @@ export default function ArrayQuestion() {
   console.log("questionId:", qid);
 
   useEffect(() => {
-    const token = localStorage.getItem("loginToken");
+    const token = localStorage.getItem("token");
     axios
       .get(`${BASE_URL}api/questions/getQuestions/${qid}`, {
         headers: {

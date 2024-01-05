@@ -25,7 +25,7 @@ const Sheets = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const imgs = [loveBabbar,striver2,neetcode,leetcode,striver,nishant,striver_79];
+  const imgs = [striver2,neetcode,loveBabbar,leetcode,striver,nishant,striver_79];
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -62,6 +62,7 @@ const Sheets = () => {
   const shimmerCards = Array.from({ length: 6 }, (_, index) => (
     <ShimmerCard key={index} />
   ));
+  const sortedSheets = sheets.sort((a, b) => b.title.localeCompare(a.title));
 
   return (
     <div className="sheet-container">
@@ -73,7 +74,7 @@ const Sheets = () => {
         <img src = {serverIssue} alt="Error Image" className="error-image" />
       ): (
         <Grid container spacing={0} className="card-container">
-          {sheets?.map((item, index) => {
+          {sortedSheets?.map((item, index) => {
             return (
               <Grid item xs={12} sm={6} md={4} key={index} className="Grid-container">
                 <Card sx={{ minWidth: "20rem", margin: "20px 17px", boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>

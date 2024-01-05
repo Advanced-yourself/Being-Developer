@@ -21,7 +21,7 @@ function Card({ progressPercentage }) {
     // Simulate loading delay (remove this in production)
     const loadingTimeout = setTimeout(() => {
       // Fetch topics data from your API here and update the topics state
-      const token = localStorage.getItem("loginToken");
+      const token = localStorage.getItem("token");
       axios
         .get(`${BASE_URL}api/topics/getTopics/${id}`, {
           headers: {

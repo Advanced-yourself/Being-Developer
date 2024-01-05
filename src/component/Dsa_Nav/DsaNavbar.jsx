@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useHistory } from "react-router-dom"; // Import useHistory for navigation
+import { useNavigate } from 'react-router-dom';
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -25,7 +25,7 @@ const settings = ["Profile", "Logout"];
 const DsaNavbar = ({ toggleTheme, theme }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-  // const history = useHistory(); // Initialize history for navigation
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,7 +45,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
   const handleLogout = () => {
     console.log("Logout button clicked"); // Check if this message is logged
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
 
