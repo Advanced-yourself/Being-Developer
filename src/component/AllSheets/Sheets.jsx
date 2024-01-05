@@ -25,7 +25,7 @@ const Sheets = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const imgs = [striver2,neetcode,loveBabbar,leetcode,striver,nishant,striver_79];
+  const imgs = [striver2,neetcode,leetcode,striver,nishant,striver_79];
 
   useEffect(() => {
     const token = localStorage.getItem("token");

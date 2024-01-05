@@ -92,7 +92,7 @@ export default function ArrayQuestion() {
       newBookmarkStates[index] = !newBookmarkStates[index];
       setBookmarkStates(newBookmarkStates);
 
-      const token = localStorage.getItem("loginToken");
+      const token = localStorage.getItem("token");
       await axios.post(
         "YOUR_BACKEND_ENDPOINT_HERE",
         {
