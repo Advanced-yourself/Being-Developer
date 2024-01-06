@@ -25,38 +25,45 @@ const Sheets = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const imgs = [striver2,neetcode,leetcode,striver,nishant,striver_79];
+  const imgs = [
+    striver2,
+    neetcode,
+    loveBabbar,
+    leetcode,
+    striver,
+    nishant,
+    striver_79,
+  ];
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     // console.log("Token Console",token);
-    if(token){
+    if (token) {
       // console.log("Api called");
       handleSheet(token);
     }
   }, []);
 
-  const handleSheet = (token) =>{
-    console.log(BASE_URL);
+  const handleSheet = (token) => {
+    // console.log(BASE_URL);
     axios
-    .get(`${BASE_URL}api/sheets/allsheets`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      console.log(res.data.sheets);
-      console.log(res.data);
-      setSheets(res.data.sheets);
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("Error fetching sheets:", err);
+      .get(`${BASE_URL}api/sheets/allsheets`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        // console.log(res.data.sheets);
+        // console.log(res.data);
+        setSheets(res.data.sheets);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching sheets:", err);
         setError(true);
         setLoading(false);
-    });
-
-  }
+      });
+  };
 
   // Create an array of length 10 to render 10 shimmer cards
   const shimmerCards = Array.from({ length: 6 }, (_, index) => (
@@ -69,17 +76,29 @@ const Sheets = () => {
       {loading ? (
         // Render the shimmer cards
         shimmerCards
-      ) 
-      : error ? (
-        <img src = {serverIssue} alt="Error Image" className="error-image" />
-      ): (
+      ) : error ? (
+        <img src={serverIssue} alt="Error Image" className="error-image" />
+      ) : (
         <Grid container spacing={0} className="card-container">
           {sortedSheets?.map((item, index) => {
             return (
-              <Grid item xs={12} sm={6} md={4} key={index} className="Grid-container">
-                <Card sx={{ minWidth: "20rem", margin: "20px 17px", boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={index}
+                className="Grid-container"
+              >
+                <Card
+                  sx={{
+                    minWidth: "20rem",
+                    margin: "20px 17px",
+                    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                  }}
+                >
                   <CardMedia
-                    sx={{ height: 190}}
+                    sx={{ height: 190 }}
                     image={imgs[index]}
                     title={item.title}
                   />
@@ -100,7 +119,9 @@ const Sheets = () => {
                     <Link to={`/dsa/allSheets/topic/${item._id}`}>
                       <Button>Solve Now</Button>
                     </Link>
-                    <h4>{item.questions} Questions to go</h4>
+                    <div>
+                      <h4>{item.questions} Questions to go</h4>
+                    </div>{" "}
                   </CardActions>
                 </Card>
               </Grid>
@@ -113,4 +134,3 @@ const Sheets = () => {
 };
 
 export default Sheets;
-
