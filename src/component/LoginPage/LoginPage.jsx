@@ -28,6 +28,7 @@ const LoginPage = () => {
         password,
       });
       const token = response.data.token;
+      //
 
       if (token) {
         storeTokenInLS(token);
