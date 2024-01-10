@@ -44,9 +44,15 @@ const navigate = useNavigate();
 
 
   const handleLogout = () => {
+<<<<<<< HEAD
     console.log("Logout button clicked");
     localStorage.removeItem("token");
     navigate("/login");
+=======
+    console.log("Logout button clicked"); // Check if this message is logged
+    localStorage.removeItem("token-info");
+    window.location.href = "/login";
+>>>>>>> 986d422ca97cabaa0da931bad9986a74adedb5b0
   };
 
 

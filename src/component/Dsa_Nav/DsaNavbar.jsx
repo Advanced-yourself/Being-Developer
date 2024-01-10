@@ -44,8 +44,13 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
 
   const handleLogout = () => {
     console.log("Logout button clicked"); // Check if this message is logged
+<<<<<<< HEAD
     localStorage.removeItem("token");
     navigate("/login");
+=======
+    localStorage.removeItem("token-info");
+    window.location.href = "/login";
+>>>>>>> 986d422ca97cabaa0da931bad9986a74adedb5b0
   };
 
 
