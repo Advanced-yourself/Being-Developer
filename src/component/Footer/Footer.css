@@ -36,6 +36,7 @@ ul{
 }
 
 #light .footer {
+    /* background: linear-gradient(43deg,#4158d0 0,#c850c0 46%,#ffcc70 100%) */
 
     background: linear-gradient(335deg, #6e3cb5 0, #5c36b3 25%, #4530b2 50%, #232bb1 75%, #0028af 100%);
 

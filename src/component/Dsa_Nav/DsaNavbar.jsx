@@ -103,7 +103,7 @@ const DsaNavbar = ({ toggleTheme, theme }) => {
                   component="a"
                   href="/"
                   sx={{
-                    fontFamily: "monospace",
+                    fontFamily: "Open Sans,sans-serif",
                     fontWeight: 700,
                     letterSpacing: "0rem",
                     color: "inherit",

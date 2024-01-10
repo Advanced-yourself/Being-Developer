@@ -14,8 +14,8 @@ import BasicModalDialog from "../Notes_box/NotesBox.jsx";
 import IconButton from "@mui/joy/IconButton";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
-import codingninjas from "../../../src/assets/CODING.jpg";
-import leet from "../../../src/assets/leetcode.svg";
+// import codingninjas from "../../../src/assets/CODING.jpg";
+// import leet from "../../../src/assets/leetcode.svg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../config.js";
@@ -88,13 +88,14 @@ export default function ArrayQuestion() {
 
   const toggleBookmarkHandler = async (questionId, index) => {
     try {
+      // Assuming bookmarkStates is an array of boolean values
       const newBookmarkStates = [...bookmarkStates];
       newBookmarkStates[index] = !newBookmarkStates[index];
       setBookmarkStates(newBookmarkStates);
-
+  
       const token = localStorage.getItem("token");
-      await axios.post(
-        "YOUR_BACKEND_ENDPOINT_HERE",
+      const response = await axios.post(
+        `${BASE_URL}api/auth/togglebookmark`,
         {
           questionId,
         },
@@ -104,8 +105,23 @@ export default function ArrayQuestion() {
           },
         }
       );
+  
+      // Check the response if needed
+      console.log("Toggle Bookmark Response:", response.data);
     } catch (error) {
-      console.error("Error toggling bookmark:", error);
+      if (axios.isCancel(error)) {
+        console.log("Request canceled:", error.message);
+      } else if (error.response) {
+        // The request was made, but the server responded with a status code
+        console.error("Server responded with an error:", error.response.data);
+        console.error("Status code:", error.response.status);
+      } else if (error.request) {
+        // The request was made, but no response was received
+        console.error("No response received from the server:", error.request);
+      } else {
+        // Something happened in setting up the request that triggered an error
+        console.error("Error setting up the request:", error.message);
+      }
     }
   };
 
@@ -120,7 +136,12 @@ export default function ArrayQuestion() {
 
       <Sheet
         variant="outlined"
-        sx={{ width: "100%", boxShadow: "sm", borderRadius: "sm",minHeight:"100vh" }}
+        sx={{
+          width: "100%",
+          boxShadow: "sm",
+          borderRadius: "sm",
+          minHeight: "100vh",
+        }}
       >
         <Table
           aria-labelledby="tableTitle"
@@ -182,7 +203,7 @@ export default function ArrayQuestion() {
                       >
                         <img
                           src={codingNinjas}
-                          style={{ width: "30px"}}
+                          style={{ width: "30px" }}
                           alt="Coding Ninjas"
                         />
                       </a>

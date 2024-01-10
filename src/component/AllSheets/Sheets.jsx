@@ -3,7 +3,6 @@ import { Grid } from "@mui/material";
 import ShimmerCard from "../ShimmerCard/ShimmerCard";
 import striver from "../../../src/assets/striver.png";
 import striver2 from "../../../src/assets/striver2.png";
-// import striver3 from "../../../src/assets/striver3.jpg";
 import loveBabbar from "../../../src/assets/loveBabbar.png";
 import nishant from "../../../src/assets/nishant.jpg";
 import leetcode from "../../../src/assets/leetcode.jpg";
