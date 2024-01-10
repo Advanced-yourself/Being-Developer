@@ -108,7 +108,7 @@ export default function ArrayQuestion() {
   
       // Check the response if needed
       console.log("Toggle Bookmark Response:", response.data);
-    } catch (error) {
+    } catch (error) {//
       if (axios.isCancel(error)) {
         console.log("Request canceled:", error.message);
       } else if (error.response) {
