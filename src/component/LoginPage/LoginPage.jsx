@@ -24,7 +24,7 @@ const LoginPage = () => {
         // const message = res.data.message;
       
         if (token) {
-          localStorage.setItem("loginToken", token);
+          localStorage.setItem("token", token);
           window.alert("Login Successful");
         } else {
           navigate("/signup");
