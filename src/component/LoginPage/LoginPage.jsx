@@ -15,6 +15,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(`${BASE_URL}api/auth/login`);
     try {
       if (!email || !password) {
         window.alert("All fields are required");
