@@ -62,7 +62,7 @@ const SignUpPage = () => {
         // console.log('Show me signup data', res);
         storeTokenInLS(res.data.token);
         // localStorage.setItem('userToken', res.data.token);
-        navigate('/dsa'); // Redirect to the root page after successful signup
+        navigate('/'); // Redirect to the root page after successful signup
   
       })
       .catch((err) => {

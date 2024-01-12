@@ -36,10 +36,11 @@ const LoginPage = () => {
         window.alert("Login Successful");
         navigate("/"); 
       } else {
-        navigate("/signup");
         window.alert("Invalid Credentials. Either email or password is wrong");
+        navigate("/signup");
       }
     } catch (error) {
+      window.alert("Invalid Credentials. Either email or password is wrong");
       console.error("Error during login:", error);
     } finally {
       setLoading(false);
